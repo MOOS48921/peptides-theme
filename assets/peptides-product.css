@@ -912,6 +912,13 @@
 .peptides-reviews__name {
   font-size: 1.25rem;
   color: #888;
-  margin: 0;
+  margin: 0 0 6px;
   font-style: italic;
+}
+
+.peptides-reviews__badge {
+  font-size: 1.1rem;
+  color: #4caf50;
+  margin: 0;
+  font-weight: 600;
 }
