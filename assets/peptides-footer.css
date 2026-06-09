@@ -192,18 +192,46 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 5px;
-  padding: 4px 8px;
   height: 28px;
+  min-width: 44px;
+  padding: 0 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .peptides-footer__pay-icon svg {
-  height: 16px;
+  height: 14px;
   width: auto;
   display: block;
-  color: #ccc;
+  color: #1a1a1a;
+}
+
+.peptides-footer__pay-icon[title="Apple Pay"] {
+  background: #000;
+  border-color: #000;
+}
+
+.peptides-footer__pay-icon[title="Apple Pay"] svg {
+  color: #fff;
+}
+
+.peptides-footer__pay-icon[title="iDEAL"] svg {
+  height: 20px;
+  width: 38px;
+}
+
+.peptides-footer__pay-icon[title="Bancontact"] {
+  background: #005498;
+  border-color: #005498;
+  padding: 0 8px;
+}
+
+.peptides-footer__pay-icon[title="Bancontact"] svg {
+  height: 20px;
+  width: 54px;
 }
 
 /* ── Copyright ── */

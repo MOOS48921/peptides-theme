@@ -288,45 +288,43 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 2.4rem;
-  padding: 0.3rem 0.7rem;
+  height: 28px;
+  min-width: 44px;
+  padding: 0 10px;
   border: 1px solid #e0e0e0;
-  border-radius: 0.4rem;
+  border-radius: 5px;
   background: #fff;
   color: #1a1a1a;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .peptides-pay-icon svg {
-  height: 1.6rem;
+  height: 14px;
   width: auto;
   display: block;
 }
 
 .peptides-pay-icon--dark {
-  background: #000;
-  border-color: #000;
+  background: #111;
+  border-color: #111;
   color: #fff;
 }
 
-/* iDEAL — fixed size because of inner rect */
-.peptides-pay-icon[title="iDEAL"] {
-  padding: 0;
-}
 .peptides-pay-icon[title="iDEAL"] svg {
-  height: 2.4rem;
-  width: 4rem;
+  height: 20px;
+  width: 38px;
 }
 
-/* Bancontact */
 .peptides-pay-icon[title="Bancontact"] {
-  padding: 0;
   background: #005498;
   border-color: #005498;
+  padding: 0 8px;
 }
+
 .peptides-pay-icon[title="Bancontact"] svg {
-  height: 2.4rem;
-  width: 6rem;
+  height: 20px;
+  width: 54px;
 }
 
 /* --- Section 2: USP bullets -------------------------------- */
