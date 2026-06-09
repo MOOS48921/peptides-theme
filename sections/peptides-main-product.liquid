@@ -196,50 +196,56 @@
             <span class="peptides-trust__payments-label">Veilige betalingen</span>
           </div>
           <div class="peptides-trust__payment-icons" aria-label="Geaccepteerde betaalmethoden">
+
             {%- comment -%} Visa {%- endcomment -%}
-            <span class="peptides-pay-icon" title="Visa">
-              <svg viewBox="0 0 50 16" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visa">
-                <path d="M19.8 1.2L16.4 14.8h-3.3L16.5 1.2h3.3zm13.8 8.9l1.7-4.7.98 4.7h-2.68zm3.7 4.7h3.06L37.7 1.2h-2.83c-.63 0-1.17.37-1.4.94L28.9 14.8h3.23l.64-1.77h3.94l.37 1.77zM26.3 10.1c.01-3.14-4.34-3.32-4.31-4.72.01-.43.42-.88 1.3-.99.44-.06 1.65-.1 3.02.53l.54-2.51A8.23 8.23 0 0 0 23.95.8c-3.04 0-5.18 1.61-5.2 3.93-.02 1.71 1.52 2.66 2.69 3.23 1.2.58 1.6.96 1.59 1.48-.01.8-.95 1.15-1.83 1.16-1.54.02-2.43-.41-3.14-.74l-.55 2.59c.71.33 2.03.61 3.4.62 3.22 0 5.33-1.59 5.34-4.06l.05.09zM15 1.2l-4.97 13.6H6.77L4.34 3.55c-.14-.56-.27-.77-.72-1C2.9 2.1 1.66 1.7.56 1.44L.63 1.2H5.8c.67 0 1.27.45 1.42 1.22l1.3 6.9 3.21-8.12H15z" fill="currentColor"/>
+            <span class="peptides-pay-badge" title="Visa" style="background:#1A1F71;">
+              <svg viewBox="0 0 80 30" xmlns="http://www.w3.org/2000/svg" aria-label="Visa" role="img" height="30" width="60">
+                <text x="50%" y="21" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="bold" font-style="italic" fill="#fff" text-anchor="middle" letter-spacing="1">VISA</text>
               </svg>
             </span>
+
             {%- comment -%} Mastercard {%- endcomment -%}
-            <span class="peptides-pay-icon" title="Mastercard">
-              <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mastercard">
-                <circle cx="15" cy="12" r="9" fill="#EB001B"/>
-                <circle cx="23" cy="12" r="9" fill="#F79E1B"/>
-                <path d="M19 5.46A9 9 0 0 1 22.85 12 9 9 0 0 1 19 18.54 9 9 0 0 1 15.15 12 9 9 0 0 1 19 5.46z" fill="#FF5F00"/>
+            <span class="peptides-pay-badge" title="Mastercard" style="background:#fff;">
+              <svg viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg" aria-label="Mastercard" role="img" height="30" width="50">
+                <circle cx="19" cy="15" r="10" fill="#EB001B"/>
+                <circle cx="31" cy="15" r="10" fill="#F79E1B"/>
+                <path d="M25 7.3A10 10 0 0 1 29.3 15 10 10 0 0 1 25 22.7 10 10 0 0 1 20.7 15 10 10 0 0 1 25 7.3z" fill="#FF5F00"/>
               </svg>
             </span>
+
             {%- comment -%} PayPal {%- endcomment -%}
-            <span class="peptides-pay-icon" title="PayPal">
-              <svg viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PayPal">
-                <path d="M11.5 4h5.7c3 0 5 1.4 4.6 4.6-.5 3.7-2.8 5.5-6.3 5.5H13l-1.2 5.9H8L11.5 4z" fill="#009CDE"/>
-                <path d="M14.5 2h5.7c3.5 0 5.5 1.6 5 5.1-.6 4.2-3.2 6.3-7.2 6.3H15l-1.3 6.5H10L14.5 2z" fill="#003087"/>
-                <path d="M22 3.5h5.7c3 0 5 1.4 4.6 4.6-.5 3.7-2.8 5.5-6.3 5.5h-2.5l-1.2 5.9h-3.8L22 3.5z" fill="#009CDE"/>
+            <span class="peptides-pay-badge" title="PayPal" style="background:#fff;">
+              <svg viewBox="0 0 80 30" xmlns="http://www.w3.org/2000/svg" aria-label="PayPal" role="img" height="30" width="70">
+                <text x="50%" y="20" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#003087" text-anchor="middle">Pay</text>
+                <text x="50%" y="20" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="#009CDE" text-anchor="middle" dx="18">Pal</text>
               </svg>
             </span>
+
             {%- comment -%} Apple Pay {%- endcomment -%}
-            <span class="peptides-pay-icon peptides-pay-icon--dark" title="Apple Pay">
-              <svg viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Apple Pay">
-                <path d="M11.7 7.2c-.6.7-1.5 1.2-2.4 1.1-.1-1 .4-2 .9-2.6.6-.7 1.6-1.2 2.4-1.2.1 1-.3 2-.9 2.7zm.9 1.4c-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.7-2.7-.7C5.5 8.8 4 9.8 3.2 11.3c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.2 2.7 2.2 1 0 1.4-.7 2.7-.7 1.3 0 1.6.7 2.7.7 1.1 0 1.9-1 2.7-2.1.8-1.2 1.1-2.4 1.1-2.5-.1 0-2.1-.8-2.1-3.1 0-1.9 1.6-2.8 1.6-2.9-1-1.4-2.4-1.4-2.6-1.4l-.5.2zM22.8 5.3h-3.1v13.5h1.9v-4.7h2.2c2 0 3.4-1.4 3.4-3.4s-1.4-3.4-3.4-3.4zm.1 5.2h-1.3V6.8h1.3c1.1 0 1.7.6 1.7 1.8s-.6 1.9-1.7 1.9zm9.1-2c-1.9 0-3.3 1-3.3 2.5 0 1.2.8 2 2.2 2.4l1 .3c.9.3 1.3.6 1.3 1.2s-.5 1-1.4 1c-.9 0-1.6-.5-1.6-1.3h-1.8c0 1.8 1.4 2.8 3.3 2.8 2 0 3.3-1 3.3-2.6 0-1.3-.8-2-2.3-2.4l-.9-.3c-.8-.2-1.2-.6-1.2-1.1 0-.6.5-1 1.3-1 .9 0 1.4.5 1.4 1.2h1.7c-.1-1.7-1.3-2.7-3-2.7zm8.2.1l-1.9 5.9-1.9-6h-2l2.8 7.8-.2.5c-.2.7-.6 1-1.2 1-.3 0-.6 0-.8-.1v1.5c.3.1.6.1.9.1 1.7 0 2.5-.8 3.1-2.6L43 8.7h-1.8v-.1z" fill="currentColor"/>
+            <span class="peptides-pay-badge" title="Apple Pay" style="background:#000;">
+              <svg viewBox="0 0 80 30" xmlns="http://www.w3.org/2000/svg" aria-label="Apple Pay" role="img" height="30" width="70">
+                <path d="M22 8.5c1-.1 1.9.6 2.4 1.3-.5.4-1.5 1.1-1.5 2.3 0 1.4 1.2 1.9 1.2 1.9s-.8 2.4-2 3.5c-.7.8-1.5 1.6-2.4 1.6-.9 0-1.1-.5-2.1-.5-1 0-1.4.5-2.2.5-.9 0-1.7-.8-2.4-1.6-1.3-1.5-2.4-4-2.4-6.3 0-2.9 1.9-4.4 3.8-4.4.9 0 1.7.6 2.3.6.6 0 1.5-.6 2.5-.6.4 0 1.4.1 2.2.6.1 0 .6.1.6.1zm-2.7-1.7c.4-.5.8-1.2.7-1.9-.6.1-1.4.4-1.8.9-.4.4-.8 1.1-.7 1.8.7.1 1.4-.3 1.8-.8z" fill="#fff"/>
+                <text x="38" y="20" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">Pay</text>
               </svg>
             </span>
+
             {%- comment -%} iDEAL {%- endcomment -%}
-            <span class="peptides-pay-icon" title="iDEAL">
-              <svg viewBox="0 0 50 36" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="iDEAL">
-                <rect width="50" height="36" rx="4" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
-                <text x="7" y="23" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#CC0066">i</text>
-                <text x="13" y="23" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#000">DEAL</text>
-                <circle cx="9" cy="13" r="4" fill="#CC0066"/>
+            <span class="peptides-pay-badge" title="iDEAL" style="background:#fff;">
+              <svg viewBox="0 0 70 30" xmlns="http://www.w3.org/2000/svg" aria-label="iDEAL" role="img" height="30" width="60">
+                <rect width="70" height="30" rx="0" fill="#fff"/>
+                <rect x="0" y="0" width="18" height="30" fill="#CC0066"/>
+                <text x="9" y="21" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="900" fill="#fff" text-anchor="middle">i</text>
+                <text x="42" y="20" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">DEAL</text>
               </svg>
             </span>
+
             {%- comment -%} Bancontact {%- endcomment -%}
-            <span class="peptides-pay-icon" title="Bancontact">
-              <svg viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bancontact">
-                <rect width="60" height="24" rx="3" fill="#005498"/>
-                <text x="6" y="16.5" font-family="Arial,sans-serif" font-size="9.5" font-weight="bold" fill="#fff">bancontact</text>
+            <span class="peptides-pay-badge" title="Bancontact" style="background:#005498;">
+              <svg viewBox="0 0 90 30" xmlns="http://www.w3.org/2000/svg" aria-label="Bancontact" role="img" height="30" width="80">
+                <text x="50%" y="20" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">bancontact</text>
               </svg>
             </span>
+
           </div>
         </div>
 

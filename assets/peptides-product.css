@@ -281,50 +281,18 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 6px;
 }
 
-.peptides-pay-icon {
+.peptides-pay-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 28px;
-  min-width: 44px;
-  padding: 0 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  background: #fff;
-  color: #1a1a1a;
+  height: 30px;
+  border-radius: 6px;
   overflow: hidden;
   flex-shrink: 0;
-}
-
-.peptides-pay-icon svg {
-  height: 14px;
-  width: auto;
-  display: block;
-}
-
-.peptides-pay-icon--dark {
-  background: #111;
-  border-color: #111;
-  color: #fff;
-}
-
-.peptides-pay-icon[title="iDEAL"] svg {
-  height: 20px;
-  width: 38px;
-}
-
-.peptides-pay-icon[title="Bancontact"] {
-  background: #005498;
-  border-color: #005498;
-  padding: 0 8px;
-}
-
-.peptides-pay-icon[title="Bancontact"] svg {
-  height: 20px;
-  width: 54px;
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
 /* --- Section 2: USP bullets -------------------------------- */
