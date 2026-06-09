@@ -289,18 +289,18 @@
   align-items: center;
   justify-content: center;
   height: 28px;
-  max-width: 48px;
-  width: auto;
+  padding: 3px 5px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: 4px;
   overflow: hidden;
   flex-shrink: 0;
-  border: 1px solid rgba(0,0,0,0.1);
 }
 
-.peptides-pay-badge svg {
-  height: 28px;
+.peptides-pay-badge svg,
+.peptides-pay-badge img {
+  height: 20px;
   width: auto;
-  max-width: 48px;
   display: block;
 }
 

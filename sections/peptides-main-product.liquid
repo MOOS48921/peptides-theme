@@ -196,54 +196,19 @@
             <span class="peptides-trust__payments-label">Veilige betalingen</span>
           </div>
           <div class="peptides-trust__payment-icons" aria-label="Geaccepteerde betaalmethoden">
-
-            {%- comment -%} Visa {%- endcomment -%}
-            <span class="peptides-pay-badge" title="Visa" style="background:#1A1F71;width:44px;">
-              <svg viewBox="0 0 44 28" xmlns="http://www.w3.org/2000/svg" aria-label="Visa" role="img" height="28" width="44">
-                <text x="22" y="19" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="bold" font-style="italic" fill="#fff" text-anchor="middle" letter-spacing="1">VISA</text>
-              </svg>
-            </span>
-
-            {%- comment -%} Mastercard {%- endcomment -%}
-            <span class="peptides-pay-badge" title="Mastercard" style="background:#fff;width:44px;">
-              <svg viewBox="0 0 44 28" xmlns="http://www.w3.org/2000/svg" aria-label="Mastercard" role="img" height="28" width="44">
-                <circle cx="17" cy="14" r="8" fill="#EB001B"/>
-                <circle cx="27" cy="14" r="8" fill="#F79E1B"/>
-                <path d="M22 7.8A8 8 0 0 1 25.6 14 8 8 0 0 1 22 20.2 8 8 0 0 1 18.4 14 8 8 0 0 1 22 7.8z" fill="#FF5F00"/>
-              </svg>
-            </span>
-
-            {%- comment -%} PayPal {%- endcomment -%}
-            <span class="peptides-pay-badge" title="PayPal" style="background:#fff;width:48px;">
-              <svg viewBox="0 0 48 28" xmlns="http://www.w3.org/2000/svg" aria-label="PayPal" role="img" height="28" width="48">
-                <text x="24" y="17" font-family="Arial,Helvetica,sans-serif" font-size="9" font-weight="bold" fill="#003087" text-anchor="middle">Pay</text>
-                <text x="36" y="17" font-family="Arial,Helvetica,sans-serif" font-size="9" font-weight="bold" fill="#009CDE" text-anchor="middle">Pal</text>
-              </svg>
-            </span>
-
-            {%- comment -%} Apple Pay {%- endcomment -%}
-            <span class="peptides-pay-badge" title="Apple Pay" style="background:#000;width:48px;">
-              <svg viewBox="0 0 48 28" xmlns="http://www.w3.org/2000/svg" aria-label="Apple Pay" role="img" height="28" width="48">
-                <text x="24" y="18" font-family="Arial,Helvetica,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle"> Pay</text>
-              </svg>
-            </span>
-
-            {%- comment -%} iDEAL {%- endcomment -%}
-            <span class="peptides-pay-badge" title="iDEAL" style="background:#fff;width:48px;overflow:hidden;">
-              <svg viewBox="0 0 48 28" xmlns="http://www.w3.org/2000/svg" aria-label="iDEAL" role="img" height="28" width="48">
-                <rect x="0" y="0" width="14" height="28" fill="#CC0066"/>
-                <text x="7" y="19" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">i</text>
-                <text x="31" y="18" font-family="Arial,Helvetica,sans-serif" font-size="8" font-weight="bold" fill="#000" text-anchor="middle">DEAL</text>
-              </svg>
-            </span>
-
-            {%- comment -%} Bancontact {%- endcomment -%}
-            <span class="peptides-pay-badge" title="Bancontact" style="background:#005498;width:48px;">
-              <svg viewBox="0 0 48 28" xmlns="http://www.w3.org/2000/svg" aria-label="Bancontact" role="img" height="28" width="48">
-                <text x="24" y="18" font-family="Arial,Helvetica,sans-serif" font-size="7" font-weight="bold" fill="#fff" text-anchor="middle">bancontact</text>
-              </svg>
-            </span>
-
+            {%- for type in shop.enabled_payment_types -%}
+              <span class="peptides-pay-badge">
+                {{- type | payment_type_svg_tag -}}
+              </span>
+            {%- else -%}
+              {%- comment -%} Fallback when no payment types configured in store settings {%- endcomment -%}
+              {%- assign fallback_types = 'visa,master,paypal,apple_pay,ideal,bancontact' | split: ',' -%}
+              {%- for type in fallback_types -%}
+                <span class="peptides-pay-badge">
+                  {{- type | payment_type_svg_tag -}}
+                </span>
+              {%- endfor -%}
+            {%- endfor -%}
           </div>
         </div>
 
