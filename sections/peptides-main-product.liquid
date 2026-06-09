@@ -369,42 +369,49 @@
     </div>
   </div>
 
-  {%- comment -%} Section 2 – Shipping bullets (no header) {%- endcomment -%}
-  <div class="peptides-shipping-info">
-    <ul class="peptides-shipping-info__list">
-      <li>
-        <span class="peptides-shipping-info__check" aria-hidden="true">
-          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="1,4.5 3.8,7.5 9,1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span><strong>Duitsland:</strong> 3-7 werkdagen, €9,95</span>
-      </li>
-      <li>
-        <span class="peptides-shipping-info__check" aria-hidden="true">
-          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="1,4.5 3.8,7.5 9,1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span><strong>Rest van Europa:</strong> 3-7 werkdagen, €14,95</span>
-      </li>
-      <li>
-        <span class="peptides-shipping-info__check" aria-hidden="true">
-          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="1,4.5 3.8,7.5 9,1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span>Verzending vanuit Nederland · Discrete verpakking · Track &amp; trace inbegrepen</span>
-      </li>
-      <li>
-        <span class="peptides-shipping-info__check" aria-hidden="true">
-          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="1,4.5 3.8,7.5 9,1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span>Gratis verzending vanaf €250</span>
-      </li>
-    </ul>
+  {%- comment -%} Section 2 – Verzending accordion (closed by default) {%- endcomment -%}
+  {%- assign check_svg -%}
+    <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="1,4.5 3.8,7.5 9,1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  {%- endassign -%}
+  <div class="peptides-accordion" data-accordion>
+    <button class="peptides-accordion__trigger" aria-expanded="false" aria-controls="acc-ship-{{ section.id }}">
+      <span class="peptides-accordion__title">VERZENDING</span>
+      <span class="peptides-accordion__caret" aria-hidden="true">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+    <div class="peptides-accordion__body" id="acc-ship-{{ section.id }}" hidden>
+      <div class="peptides-accordion__content">
+        <ul class="peptides-shipping-info__list">
+          <li>
+            <span class="peptides-shipping-info__check" aria-hidden="true">{{ check_svg }}</span>
+            <span><strong>Nederland:</strong> gratis verzending</span>
+          </li>
+          <li>
+            <span class="peptides-shipping-info__check" aria-hidden="true">{{ check_svg }}</span>
+            <span><strong>België:</strong> gratis verzending</span>
+          </li>
+          <li>
+            <span class="peptides-shipping-info__check" aria-hidden="true">{{ check_svg }}</span>
+            <span><strong>Duitsland:</strong> 3-7 werkdagen, €9,95</span>
+          </li>
+          <li>
+            <span class="peptides-shipping-info__check" aria-hidden="true">{{ check_svg }}</span>
+            <span><strong>Rest van Europa:</strong> 3-7 werkdagen, €14,95</span>
+          </li>
+          <li>
+            <span class="peptides-shipping-info__check" aria-hidden="true">{{ check_svg }}</span>
+            <span>Verzending vanuit Nederland · Discrete verpakking · Track &amp; trace inbegrepen</span>
+          </li>
+          <li>
+            <span class="peptides-shipping-info__check" aria-hidden="true">{{ check_svg }}</span>
+            <span>Gratis verzending vanaf €250</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   {%- comment -%} Section 3 – Labresultaten accordion (closed by default) {%- endcomment -%}
