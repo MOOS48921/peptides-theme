@@ -349,8 +349,8 @@
 <div class="peptides-dark-panels page-width" id="PeptidesPanels-{{ section.id }}">
 
   {%- comment -%} Section 1 – Productbeschrijving accordion (open by default) {%- endcomment -%}
-  <div class="peptides-accordion peptides-accordion--open" data-accordion>
-    <button class="peptides-accordion__trigger" aria-expanded="true" aria-controls="acc-desc-{{ section.id }}">
+  <div class="peptides-accordion" data-accordion>
+    <button class="peptides-accordion__trigger" aria-expanded="false" aria-controls="acc-desc-{{ section.id }}">
       <span class="peptides-accordion__title">PRODUCTBESCHRIJVING</span>
       <span class="peptides-accordion__caret" aria-hidden="true">
         <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -358,7 +358,7 @@
         </svg>
       </span>
     </button>
-    <div class="peptides-accordion__body" id="acc-desc-{{ section.id }}">
+    <div class="peptides-accordion__body" id="acc-desc-{{ section.id }}" hidden>
       <div class="peptides-accordion__content rte">
         {%- if product.description != blank -%}
           {{ product.description }}
@@ -375,7 +375,7 @@
   {%- endassign -%}
   <div class="peptides-accordion" data-accordion>
     <button class="peptides-accordion__trigger" aria-expanded="false" aria-controls="acc-ship-{{ section.id }}">
-      <span class="peptides-accordion__title">VERZENDING</span>
+      <span class="peptides-accordion__title">VERZENDING &amp; LEVERING</span>
       <span class="peptides-accordion__caret" aria-hidden="true">
         <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
