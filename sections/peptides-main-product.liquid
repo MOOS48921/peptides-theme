@@ -339,11 +339,7 @@
       </div>
       {%- comment -%} end .peptides-trust {%- endcomment -%}
 
-      {%- if product.description != blank -%}
-        <div class="product__description rte" style="font-size:1.4rem;color:#444;line-height:1.6">
-          {{ product.description }}
-        </div>
-      {%- endif -%}
+      {%- comment -%} Description moved into PRODUCTBESCHRIJVING accordion below {%- endcomment -%}
 
     </div>
   </div>
@@ -364,9 +360,7 @@
     </button>
     <div class="peptides-accordion__body" id="acc-desc-{{ section.id }}">
       <div class="peptides-accordion__content rte">
-        {%- if product.metafields.custom.productbeschrijving != blank -%}
-          {{ product.metafields.custom.productbeschrijving.value }}
-        {%- elsif product.description != blank -%}
+        {%- if product.description != blank -%}
           {{ product.description }}
         {%- else -%}
           <p>Productbeschrijving volgt binnenkort.</p>

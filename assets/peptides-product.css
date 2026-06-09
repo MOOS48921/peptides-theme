@@ -748,3 +748,126 @@
     font-size: 2.4rem;
   }
 }
+
+/* ---- Description HTML (rte) inside dark accordion -------- */
+.peptides-dark-panels .peptides-accordion__content.rte h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 1.6rem 0 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte h3:first-child {
+  margin-top: 0;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte p {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  color: #ccc;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte ul li::before {
+  content: '';
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  min-width: 1.6rem;
+  background: #1B6B3A;
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='1,4 4,7 9,1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.8rem;
+  font-size: 1.35rem;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte table thead th {
+  text-align: left;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #888;
+  padding: 0.5rem 1rem 0.7rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte table thead th:last-child {
+  padding-right: 0;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte table tbody td {
+  padding: 0.9rem 1rem 0.9rem 0;
+  border-bottom: 1px solid #222;
+  vertical-align: top;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte table tbody td:first-child {
+  color: #888;
+  font-size: 1.25rem;
+  font-weight: 500;
+  white-space: nowrap;
+  padding-right: 2rem;
+  width: 38%;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte table tbody td:last-child {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.peptides-dark-panels .peptides-accordion__content.rte table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 599px) {
+  .peptides-dark-panels .peptides-accordion__content.rte table,
+  .peptides-dark-panels .peptides-accordion__content.rte table tbody,
+  .peptides-dark-panels .peptides-accordion__content.rte table tr,
+  .peptides-dark-panels .peptides-accordion__content.rte table td {
+    display: block;
+    width: 100%;
+  }
+  .peptides-dark-panels .peptides-accordion__content.rte table thead {
+    display: none;
+  }
+  .peptides-dark-panels .peptides-accordion__content.rte table tbody td:first-child {
+    padding-bottom: 0.2rem;
+    border-bottom: none;
+    font-size: 1.1rem;
+    color: #666;
+    width: 100%;
+    white-space: normal;
+  }
+  .peptides-dark-panels .peptides-accordion__content.rte table tbody td:last-child {
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+}
