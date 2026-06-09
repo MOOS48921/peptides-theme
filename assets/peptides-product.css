@@ -237,6 +237,269 @@
   color: #dc2626;
 }
 
+/* ============================================================
+   Trust / payment block
+   ============================================================ */
+
+.peptides-trust {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid #e8e8e8;
+  margin-top: 0.8rem;
+}
+
+/* --- Section 1: Payment methods ---------------------------- */
+.peptides-trust__payments {
+  padding: 1.4rem 0 1.2rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.peptides-trust__payments-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  color: #121212;
+}
+
+.peptides-trust__lock-icon {
+  display: flex;
+  align-items: center;
+  color: #1B6B3A;
+  flex-shrink: 0;
+}
+
+.peptides-trust__payments-label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #121212;
+  letter-spacing: 0.01em;
+}
+
+.peptides-trust__payment-icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.peptides-pay-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.4rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.4rem;
+  background: #fff;
+  color: #1a1a1a;
+  overflow: hidden;
+}
+
+.peptides-pay-icon svg {
+  height: 1.6rem;
+  width: auto;
+  display: block;
+}
+
+.peptides-pay-icon--dark {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+/* iDEAL — fixed size because of inner rect */
+.peptides-pay-icon[title="iDEAL"] {
+  padding: 0;
+}
+.peptides-pay-icon[title="iDEAL"] svg {
+  height: 2.4rem;
+  width: 4rem;
+}
+
+/* Bancontact */
+.peptides-pay-icon[title="Bancontact"] {
+  padding: 0;
+  background: #005498;
+  border-color: #005498;
+}
+.peptides-pay-icon[title="Bancontact"] svg {
+  height: 2.4rem;
+  width: 6rem;
+}
+
+/* --- Section 2: USP bullets -------------------------------- */
+.peptides-trust__usps {
+  list-style: none;
+  margin: 0;
+  padding: 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.peptides-trust__usps li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.peptides-trust__usp-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: #1B6B3A;
+  border-radius: 50%;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* --- Section 3: Delivery timeline widget ------------------- */
+.peptides-delivery {
+  padding: 1.4rem 0 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.peptides-delivery__headline {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #F5C518;
+  margin: 0 0 0.3rem;
+  line-height: 1.3;
+}
+
+.peptides-delivery__subtext {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Timeline row */
+.peptides-delivery__timeline {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.peptides-delivery__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+
+/* Connecting line sits between the icon and the next step */
+.peptides-delivery__step-line {
+  position: absolute;
+  top: 1.4rem;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: #d0d0d0;
+  z-index: 0;
+}
+
+/* Last step has no connecting line */
+.peptides-delivery__step:last-child .peptides-delivery__step-line {
+  display: none;
+}
+
+.peptides-delivery__step-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: #2a2a2a;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+/* Active (gold) step */
+.peptides-delivery__step--active .peptides-delivery__step-icon {
+  background: #F5C518;
+  color: #121212;
+}
+
+.peptides-delivery__step--active .peptides-delivery__step-line {
+  background: linear-gradient(to right, #F5C518 0%, #d0d0d0 100%);
+}
+
+.peptides-delivery__step-label {
+  margin: 0.5rem 0 0.15rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #121212;
+}
+
+.peptides-delivery__step--active .peptides-delivery__step-label {
+  color: #F5C518;
+}
+
+.peptides-delivery__step-date {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #888;
+}
+
+.peptides-delivery__step--active .peptides-delivery__step-date {
+  color: #555;
+}
+
+/* Country selector */
+.peptides-delivery__country {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 0.5rem;
+  background: #fafafa;
+  align-self: flex-start;
+  position: relative;
+}
+
+.peptides-delivery__flag {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.peptides-delivery__country-select {
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  color: #121212;
+  font-weight: 500;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 1.6rem;
+  outline: none;
+}
+
+.peptides-delivery__select-caret {
+  position: absolute;
+  right: 0.8rem;
+  color: #666;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
 /* --- Responsive tweaks ------------------------------------- */
 @media screen and (max-width: 749px) {
   .peptides-product__media {

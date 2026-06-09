@@ -181,6 +181,164 @@
         {%- endform -%}
       </product-form>
 
+      {%- comment -%} ── Trust / payment block ────────────────────── {%- endcomment -%}
+      <div class="peptides-trust">
+
+        {%- comment -%} Section 1 – Payment methods {%- endcomment -%}
+        <div class="peptides-trust__payments">
+          <div class="peptides-trust__payments-header">
+            <span class="peptides-trust__lock-icon" aria-hidden="true">
+              <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="7" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M4 7V4.5a3 3 0 0 1 6 0V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="peptides-trust__payments-label">Veilige betalingen</span>
+          </div>
+          <div class="peptides-trust__payment-icons" aria-label="Geaccepteerde betaalmethoden">
+            {%- comment -%} Visa {%- endcomment -%}
+            <span class="peptides-pay-icon" title="Visa">
+              <svg viewBox="0 0 50 16" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visa">
+                <path d="M19.8 1.2L16.4 14.8h-3.3L16.5 1.2h3.3zm13.8 8.9l1.7-4.7.98 4.7h-2.68zm3.7 4.7h3.06L37.7 1.2h-2.83c-.63 0-1.17.37-1.4.94L28.9 14.8h3.23l.64-1.77h3.94l.37 1.77zM26.3 10.1c.01-3.14-4.34-3.32-4.31-4.72.01-.43.42-.88 1.3-.99.44-.06 1.65-.1 3.02.53l.54-2.51A8.23 8.23 0 0 0 23.95.8c-3.04 0-5.18 1.61-5.2 3.93-.02 1.71 1.52 2.66 2.69 3.23 1.2.58 1.6.96 1.59 1.48-.01.8-.95 1.15-1.83 1.16-1.54.02-2.43-.41-3.14-.74l-.55 2.59c.71.33 2.03.61 3.4.62 3.22 0 5.33-1.59 5.34-4.06l.05.09zM15 1.2l-4.97 13.6H6.77L4.34 3.55c-.14-.56-.27-.77-.72-1C2.9 2.1 1.66 1.7.56 1.44L.63 1.2H5.8c.67 0 1.27.45 1.42 1.22l1.3 6.9 3.21-8.12H15z" fill="currentColor"/>
+              </svg>
+            </span>
+            {%- comment -%} Mastercard {%- endcomment -%}
+            <span class="peptides-pay-icon" title="Mastercard">
+              <svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mastercard">
+                <circle cx="15" cy="12" r="9" fill="#EB001B"/>
+                <circle cx="23" cy="12" r="9" fill="#F79E1B"/>
+                <path d="M19 5.46A9 9 0 0 1 22.85 12 9 9 0 0 1 19 18.54 9 9 0 0 1 15.15 12 9 9 0 0 1 19 5.46z" fill="#FF5F00"/>
+              </svg>
+            </span>
+            {%- comment -%} PayPal {%- endcomment -%}
+            <span class="peptides-pay-icon" title="PayPal">
+              <svg viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PayPal">
+                <path d="M11.5 4h5.7c3 0 5 1.4 4.6 4.6-.5 3.7-2.8 5.5-6.3 5.5H13l-1.2 5.9H8L11.5 4z" fill="#009CDE"/>
+                <path d="M14.5 2h5.7c3.5 0 5.5 1.6 5 5.1-.6 4.2-3.2 6.3-7.2 6.3H15l-1.3 6.5H10L14.5 2z" fill="#003087"/>
+                <path d="M22 3.5h5.7c3 0 5 1.4 4.6 4.6-.5 3.7-2.8 5.5-6.3 5.5h-2.5l-1.2 5.9h-3.8L22 3.5z" fill="#009CDE"/>
+              </svg>
+            </span>
+            {%- comment -%} Apple Pay {%- endcomment -%}
+            <span class="peptides-pay-icon peptides-pay-icon--dark" title="Apple Pay">
+              <svg viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Apple Pay">
+                <path d="M11.7 7.2c-.6.7-1.5 1.2-2.4 1.1-.1-1 .4-2 .9-2.6.6-.7 1.6-1.2 2.4-1.2.1 1-.3 2-.9 2.7zm.9 1.4c-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.7-2.7-.7C5.5 8.8 4 9.8 3.2 11.3c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.2 2.7 2.2 1 0 1.4-.7 2.7-.7 1.3 0 1.6.7 2.7.7 1.1 0 1.9-1 2.7-2.1.8-1.2 1.1-2.4 1.1-2.5-.1 0-2.1-.8-2.1-3.1 0-1.9 1.6-2.8 1.6-2.9-1-1.4-2.4-1.4-2.6-1.4l-.5.2zM22.8 5.3h-3.1v13.5h1.9v-4.7h2.2c2 0 3.4-1.4 3.4-3.4s-1.4-3.4-3.4-3.4zm.1 5.2h-1.3V6.8h1.3c1.1 0 1.7.6 1.7 1.8s-.6 1.9-1.7 1.9zm9.1-2c-1.9 0-3.3 1-3.3 2.5 0 1.2.8 2 2.2 2.4l1 .3c.9.3 1.3.6 1.3 1.2s-.5 1-1.4 1c-.9 0-1.6-.5-1.6-1.3h-1.8c0 1.8 1.4 2.8 3.3 2.8 2 0 3.3-1 3.3-2.6 0-1.3-.8-2-2.3-2.4l-.9-.3c-.8-.2-1.2-.6-1.2-1.1 0-.6.5-1 1.3-1 .9 0 1.4.5 1.4 1.2h1.7c-.1-1.7-1.3-2.7-3-2.7zm8.2.1l-1.9 5.9-1.9-6h-2l2.8 7.8-.2.5c-.2.7-.6 1-1.2 1-.3 0-.6 0-.8-.1v1.5c.3.1.6.1.9.1 1.7 0 2.5-.8 3.1-2.6L43 8.7h-1.8v-.1z" fill="currentColor"/>
+              </svg>
+            </span>
+            {%- comment -%} iDEAL {%- endcomment -%}
+            <span class="peptides-pay-icon" title="iDEAL">
+              <svg viewBox="0 0 50 36" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="iDEAL">
+                <rect width="50" height="36" rx="4" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+                <text x="7" y="23" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#CC0066">i</text>
+                <text x="13" y="23" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#000">DEAL</text>
+                <circle cx="9" cy="13" r="4" fill="#CC0066"/>
+              </svg>
+            </span>
+            {%- comment -%} Bancontact {%- endcomment -%}
+            <span class="peptides-pay-icon" title="Bancontact">
+              <svg viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bancontact">
+                <rect width="60" height="24" rx="3" fill="#005498"/>
+                <text x="6" y="16.5" font-family="Arial,sans-serif" font-size="9.5" font-weight="bold" fill="#fff">bancontact</text>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        {%- comment -%} Section 2 – USP bullets {%- endcomment -%}
+        <ul class="peptides-trust__usps" aria-label="Voordelen">
+          <li>
+            <span class="peptides-trust__usp-check" aria-hidden="true">
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="1,5 4.5,8.5 11,1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Levering binnen 1-2 werkdagen
+          </li>
+          <li>
+            <span class="peptides-trust__usp-check" aria-hidden="true">
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="1,5 4.5,8.5 11,1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Ophalen bij afhaalpunt beschikbaar
+          </li>
+          <li>
+            <span class="peptides-trust__usp-check" aria-hidden="true">
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="1,5 4.5,8.5 11,1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Discreet verpakt
+          </li>
+        </ul>
+
+        {%- comment -%} Section 3 – Delivery timeline widget {%- endcomment -%}
+        <div class="peptides-delivery">
+          <div class="peptides-delivery__header">
+            <p class="peptides-delivery__headline">Bestel voor 14:00 voor verzending op dezelfde dag</p>
+            <p class="peptides-delivery__subtext">Bestel nu, verzendt volgende werkdag</p>
+          </div>
+
+          <div class="peptides-delivery__timeline">
+            {%- comment -%} Step 1 – Besteld (gold/active) {%- endcomment -%}
+            <div class="peptides-delivery__step peptides-delivery__step--active">
+              <div class="peptides-delivery__step-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polyline points="3,9 7.5,13.5 15,4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="peptides-delivery__step-line" aria-hidden="true"></div>
+              <p class="peptides-delivery__step-label">Besteld</p>
+              <p class="peptides-delivery__step-date">Morgen</p>
+            </div>
+
+            {%- comment -%} Step 2 – Verzonden {%- endcomment -%}
+            <div class="peptides-delivery__step">
+              <div class="peptides-delivery__step-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="4" width="11" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M12 7.5h3l2 3V13h-5V7.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <circle cx="4" cy="13.5" r="1.5" fill="currentColor"/>
+                  <circle cx="14" cy="13.5" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="peptides-delivery__step-line" aria-hidden="true"></div>
+              <p class="peptides-delivery__step-label">Verzonden</p>
+              <p class="peptides-delivery__step-date">11 juni</p>
+            </div>
+
+            {%- comment -%} Step 3 – Geleverd {%- endcomment -%}
+            <div class="peptides-delivery__step">
+              <div class="peptides-delivery__step-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 2L2 6v6l7 4 7-4V6L9 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M2 6l7 4 7-4" stroke="currentColor" stroke-width="1.6"/>
+                  <line x1="9" y1="10" x2="9" y2="16" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <p class="peptides-delivery__step-label">Geleverd</p>
+              <p class="peptides-delivery__step-date">12 juni</p>
+            </div>
+          </div>
+
+          <div class="peptides-delivery__country">
+            <span class="peptides-delivery__flag" aria-hidden="true">🇳🇱</span>
+            <select class="peptides-delivery__country-select" aria-label="Land selecteren">
+              <option value="NL" selected>Netherlands</option>
+              <option value="BE">Belgium</option>
+              <option value="DE">Germany</option>
+              <option value="FR">France</option>
+            </select>
+            <span class="peptides-delivery__select-caret" aria-hidden="true">
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+      </div>
+      {%- comment -%} end .peptides-trust {%- endcomment -%}
+
       {%- if product.description != blank -%}
         <div class="product__description rte" style="font-size:1.4rem;color:#444;line-height:1.6">
           {{ product.description }}
