@@ -349,6 +349,187 @@
   </div>
 </section>
 
+{%- comment -%} ── Dark info panels (full-width, below two-column grid) ─────── {%- endcomment -%}
+<div class="peptides-dark-panels page-width" id="PeptidesPanels-{{ section.id }}">
+
+  {%- comment -%} Section 1 – Productbeschrijving accordion (open by default) {%- endcomment -%}
+  <div class="peptides-accordion peptides-accordion--open" data-accordion>
+    <button class="peptides-accordion__trigger" aria-expanded="true" aria-controls="acc-desc-{{ section.id }}">
+      <span class="peptides-accordion__title">PRODUCTBESCHRIJVING</span>
+      <span class="peptides-accordion__caret" aria-hidden="true">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+    <div class="peptides-accordion__body" id="acc-desc-{{ section.id }}">
+      <div class="peptides-accordion__content rte">
+        {%- if product.metafields.custom.productbeschrijving != blank -%}
+          {{ product.metafields.custom.productbeschrijving.value }}
+        {%- elsif product.description != blank -%}
+          {{ product.description }}
+        {%- else -%}
+          <p>Productbeschrijving volgt binnenkort.</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Section 2 – Shipping bullets (no header) {%- endcomment -%}
+  <div class="peptides-shipping-info">
+    <ul class="peptides-shipping-info__list">
+      <li>
+        <span class="peptides-shipping-info__check" aria-hidden="true">
+          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="1,4.5 3.8,7.5 9,1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span><strong>Duitsland:</strong> 3-7 werkdagen, €9,95</span>
+      </li>
+      <li>
+        <span class="peptides-shipping-info__check" aria-hidden="true">
+          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="1,4.5 3.8,7.5 9,1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span><strong>Rest van Europa:</strong> 3-7 werkdagen, €14,95</span>
+      </li>
+      <li>
+        <span class="peptides-shipping-info__check" aria-hidden="true">
+          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="1,4.5 3.8,7.5 9,1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>Verzending vanuit Nederland · Discrete verpakking · Track &amp; trace inbegrepen</span>
+      </li>
+      <li>
+        <span class="peptides-shipping-info__check" aria-hidden="true">
+          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="1,4.5 3.8,7.5 9,1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>Gratis verzending vanaf €250</span>
+      </li>
+    </ul>
+  </div>
+
+  {%- comment -%} Section 3 – Labresultaten accordion (closed by default) {%- endcomment -%}
+  <div class="peptides-accordion" data-accordion>
+    <button class="peptides-accordion__trigger" aria-expanded="false" aria-controls="acc-lab-{{ section.id }}">
+      <span class="peptides-accordion__title">LABRESULTATEN</span>
+      <span class="peptides-accordion__caret" aria-hidden="true">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+    <div class="peptides-accordion__body" id="acc-lab-{{ section.id }}" hidden>
+      <div class="peptides-accordion__content">
+        <table class="peptides-lab__table">
+          <tbody>
+            <tr>
+              <td>Testtype</td>
+              <td class="peptides-lab__value">
+                {%- if product.metafields.custom.testtype != blank -%}
+                  {{ product.metafields.custom.testtype.value }}
+                {%- else -%}
+                  Resultaat
+                {%- endif -%}
+              </td>
+            </tr>
+            <tr>
+              <td>Verificatie</td>
+              <td>
+                {%- if product.metafields.custom.testrapport_url != blank -%}
+                  <a href="{{ product.metafields.custom.testrapport_url.value }}" class="peptides-lab__link" target="_blank" rel="noopener">Testrapport verifiëren</a>
+                {%- else -%}
+                  <span class="peptides-lab__link">Testrapport verifiëren</span>
+                {%- endif -%}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <a
+          href="{{ product.metafields.custom.labresultaten_url.value | default: '#' }}"
+          class="peptides-lab__cta"
+          target="_blank"
+          rel="noopener"
+        >Bekijk laboratoriumresultaten ↗</a>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Section 4 – Gebruik en disclaimer accordion (closed by default) {%- endcomment -%}
+  <div class="peptides-accordion" data-accordion>
+    <button class="peptides-accordion__trigger" aria-expanded="false" aria-controls="acc-disc-{{ section.id }}">
+      <span class="peptides-accordion__title">GEBRUIK EN DISCLAIMER</span>
+      <span class="peptides-accordion__caret" aria-hidden="true">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+    <div class="peptides-accordion__body" id="acc-disc-{{ section.id }}" hidden>
+      <div class="peptides-accordion__content">
+        <ul class="peptides-disclaimer__list">
+          <li>
+            <span class="peptides-disclaimer__icon" aria-hidden="true">
+              <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1L1 13h14L8 1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <line x1="8" y1="6" x2="8" y2="9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="8" cy="11.5" r="0.8" fill="currentColor"/>
+              </svg>
+            </span>
+            Uitsluitend bestemd voor onderzoeksdoeleinden.
+          </li>
+          <li>
+            <span class="peptides-disclaimer__icon" aria-hidden="true">
+              <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1L1 13h14L8 1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <line x1="8" y1="6" x2="8" y2="9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="8" cy="11.5" r="0.8" fill="currentColor"/>
+              </svg>
+            </span>
+            Niet bestemd voor menselijk gebruik, diagnose of behandeling.
+          </li>
+          <li>
+            <span class="peptides-disclaimer__icon" aria-hidden="true">
+              <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1L1 13h14L8 1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <line x1="8" y1="6" x2="8" y2="9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="8" cy="11.5" r="0.8" fill="currentColor"/>
+              </svg>
+            </span>
+            Alleen voor gekwalificeerd personeel in een gecontroleerde onderzoeksomgeving.
+          </li>
+          <li>
+            <span class="peptides-disclaimer__icon" aria-hidden="true">
+              <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1L1 13h14L8 1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <line x1="8" y1="6" x2="8" y2="9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="8" cy="11.5" r="0.8" fill="currentColor"/>
+              </svg>
+            </span>
+            Door dit product te kopen, bevestigt u dat u deze gebruiksvoorwaarden hebt gelezen en akkoord gaat met standaard onderzoekspraktijken.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} Section 5 – Back to products button {%- endcomment -%}
+  <div class="peptides-back-btn-wrap">
+    <a href="/collections/all" class="peptides-back-btn">← Terug naar Producten</a>
+  </div>
+
+  {%- comment -%} Section 6 – Related products header {%- endcomment -%}
+  <div class="peptides-related-header">
+    <h2 class="peptides-related-header__title">Wordt vaak samen onderzocht</h2>
+  </div>
+
+</div>
+{%- comment -%} end .peptides-dark-panels {%- endcomment -%}
+
 {%- comment -%} Embed full variants data for JS lookup {%- endcomment -%}
 <script id="PeptidesVariantsData-{{ section.id }}" type="application/json">
   {{ product.variants | json }}
@@ -525,3 +706,46 @@
   ]
 }
 {% endschema %}
+
+<script>
+(function () {
+  function initAccordions(root) {
+    root.querySelectorAll('[data-accordion]').forEach(function (acc) {
+      var btn  = acc.querySelector('.peptides-accordion__trigger');
+      var body = acc.querySelector('.peptides-accordion__body');
+      if (!btn || !body) return;
+
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        // Close all other accordions in the same panel container
+        var container = acc.closest('.peptides-dark-panels');
+        if (container) {
+          container.querySelectorAll('[data-accordion]').forEach(function (other) {
+            if (other === acc) return;
+            var ob = other.querySelector('.peptides-accordion__trigger');
+            var ob2 = other.querySelector('.peptides-accordion__body');
+            if (ob) ob.setAttribute('aria-expanded', 'false');
+            if (ob2) ob2.hidden = true;
+            other.classList.remove('peptides-accordion--open');
+          });
+        }
+        // Toggle this one
+        var nowOpen = !open;
+        btn.setAttribute('aria-expanded', String(nowOpen));
+        body.hidden = !nowOpen;
+        acc.classList.toggle('peptides-accordion--open', nowOpen);
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { initAccordions(document); });
+  } else {
+    initAccordions(document);
+  }
+  document.addEventListener('shopify:section:load', function (e) {
+    var el = e.target || document;
+    initAccordions(el);
+  });
+})();
+</script>
