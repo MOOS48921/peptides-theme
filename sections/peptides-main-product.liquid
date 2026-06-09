@@ -1,0 +1,317 @@
+{% comment %}
+  Peptides Meester – custom product section
+  Two-column layout: image left, options + buy right.
+  Uses Dawn's variant-selects JS and product-form.js for
+  live variant switching and add-to-cart functionality.
+{% endcomment %}
+
+{{ 'peptides-product.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+<product-info
+  id="MainProduct-{{ section.id }}"
+  class="peptides-product page-width"
+  data-section="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  data-update-url="true"
+  data-url="{{ product.url }}"
+>
+  {%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+  <div class="peptides-product__grid">
+
+    {%- comment -%} ── Left: product image ────────────────────────────── {%- endcomment -%}
+    <div class="peptides-product__media">
+      {%- if product.featured_media -%}
+        <img
+          src="{{ product.featured_media | image_url: width: 800 }}"
+          alt="{{ product.featured_media.alt | escape | default: product.title | escape }}"
+          width="{{ product.featured_media.width }}"
+          height="{{ product.featured_media.height }}"
+          class="peptides-product__image"
+          loading="eager"
+          fetchpriority="high"
+        >
+      {%- else -%}
+        <div class="peptides-product__image-placeholder">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Right: product info ────────────────────────────── {%- endcomment -%}
+    <div class="peptides-product__info">
+
+      {%- comment -%} Title {%- endcomment -%}
+      <h1 class="peptides-product__title">{{ product.title | escape }}</h1>
+
+      {%- comment -%} Stock indicator {%- endcomment -%}
+      <div class="peptides-product__stock" id="PeptidesStock-{{ section.id }}" role="status">
+        <span class="peptides-product__stock-icon" aria-hidden="true">
+          <svg viewBox="0 0 10 8" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="1,4 4,7 9,1"/>
+          </svg>
+        </span>
+        <span>Op voorraad</span>
+      </div>
+
+      {%- comment -%} Variant selectors ────────────────────────────────── {%- endcomment -%}
+      {%- unless product.has_only_default_variant -%}
+        <variant-selects
+          id="variant-selects-{{ section.id }}"
+          data-section="{{ section.id }}"
+        >
+          {%- for option in product.options_with_values -%}
+            <div class="peptides-variant-group" data-option-index="{{ forloop.index0 }}">
+              <span class="peptides-variant-group__label">{{ option.name }}</span>
+              <div class="peptides-variant-group__buttons" role="group" aria-label="{{ option.name }}">
+                {%- for value in option.values -%}
+                  {%- liquid
+                    assign input_id = section.id | append: '-' | append: option.position | append: '-' | append: forloop.index0
+                    assign input_name = option.name | append: '-' | append: option.position | escape
+                    assign option_disabled = true
+                    if value.available
+                      assign option_disabled = false
+                    endif
+                  -%}
+                  {%- comment -%} Hidden radio keeps Dawn's variant-selects JS working {%- endcomment -%}
+                  <input
+                    type="radio"
+                    id="{{ input_id }}"
+                    name="{{ input_name }}"
+                    value="{{ value | escape }}"
+                    form="{{ product_form_id }}"
+                    {% if value.selected %}checked{% endif %}
+                    {% if option_disabled %}class="disabled"{% endif %}
+                    data-product-url="{{ value.product_url }}"
+                    data-option-value-id="{{ value.id }}"
+                    style="position:absolute;opacity:0;width:1px;height:1px;overflow:hidden"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                  <label
+                    for="{{ input_id }}"
+                    class="peptides-option-btn{% if value.selected %} is-selected{% endif %}{% if option_disabled %} is-unavailable{% endif %}"
+                    tabindex="0"
+                    role="radio"
+                    aria-checked="{{ value.selected }}"
+                    {% if option_disabled %}aria-disabled="true"{% endif %}
+                  >
+                    {{- value -}}
+                    {%- if option_disabled -%}
+                      <span class="visually-hidden"> – uitverkocht</span>
+                    {%- endif -%}
+                  </label>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endfor -%}
+
+          <script type="application/json" data-selected-variant>
+            {{ product.selected_or_first_available_variant | json }}
+          </script>
+        </variant-selects>
+      {%- endunless -%}
+
+      {%- comment -%} Price (bottom-right of options area) ────────────── {%- endcomment -%}
+      <div class="peptides-product__price-row" id="PeptidesPrice-{{ section.id }}" role="status">
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        {%- if current_variant.compare_at_price > current_variant.price -%}
+          <span class="peptides-product__price-compare">
+            {{ current_variant.compare_at_price | money }}
+          </span>
+        {%- endif -%}
+        <span class="peptides-product__price" data-product-price>
+          {{ current_variant.price | money }}
+        </span>
+      </div>
+
+      {%- comment -%} Add to cart ─────────────────────────────────────── {%- endcomment -%}
+      <product-form
+        class="product-form"
+        data-hide-errors="false"
+        data-section-id="{{ section.id }}"
+      >
+        <div class="product-form__error-message-wrapper peptides-product__form-error" role="alert" hidden>
+          <span class="svg-wrapper">{{- 'icon-error.svg' | inline_asset_content -}}</span>
+          <span class="product-form__error-message"></span>
+        </div>
+
+        {%- form 'product',
+          product,
+          id: product_form_id,
+          class: 'form',
+          novalidate: 'novalidate',
+          data-type: 'add-to-cart-form'
+        -%}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}"
+            class="product-variant-id"
+            {% if product.selected_or_first_available_variant.available == false
+              or product.selected_or_first_available_variant == null
+            %}
+              disabled
+            {% endif %}
+          >
+
+          <button
+            id="ProductSubmitButton-{{ section.id }}"
+            type="submit"
+            name="add"
+            class="peptides-product__add-btn"
+            {% if product.selected_or_first_available_variant.available == false
+              or product.selected_or_first_available_variant == null
+            %}
+              disabled
+            {% endif %}
+          >
+            <span>
+              {%- if product.selected_or_first_available_variant == null -%}
+                Niet beschikbaar
+              {%- elsif product.selected_or_first_available_variant.available == false -%}
+                Uitverkocht
+              {%- else -%}
+                In winkelwagen
+              {%- endif -%}
+            </span>
+            {%- render 'loading-spinner' -%}
+          </button>
+        {%- endform -%}
+      </product-form>
+
+      {%- comment -%} Product description ─────────────────────────────── {%- endcomment -%}
+      {%- if product.description != blank -%}
+        <div class="product__description rte" style="font-size:1.4rem;color:#444;line-height:1.6">
+          {{ product.description }}
+        </div>
+      {%- endif -%}
+
+    </div>{%- comment -%} end .peptides-product__info {%- endcomment -%}
+  </div>{%- comment -%} end .peptides-product__grid {%- endcomment -%}
+</product-info>
+
+{%- comment -%}
+  Synchronise the custom button UI with Dawn's variant-selects JS.
+  When a radio input changes (triggered by variant-selects.js), we update
+  the visual selected state on the matching label buttons.
+{%- endcomment -%}
+<script>
+(function () {
+  function initPeptidesVariantUI(sectionId) {
+    var container = document.getElementById('variant-selects-' + sectionId);
+    if (!container) return;
+
+    // Re-apply visual selected state after any radio change
+    function syncButtons() {
+      container.querySelectorAll('input[type="radio"]').forEach(function (radio) {
+        var label = container.querySelector('label[for="' + radio.id + '"]');
+        if (!label) return;
+        if (radio.checked) {
+          label.classList.add('is-selected');
+          label.setAttribute('aria-checked', 'true');
+        } else {
+          label.classList.remove('is-selected');
+          label.setAttribute('aria-checked', 'false');
+        }
+      });
+
+      // Update price display
+      var variantData = container.querySelector('[data-selected-variant]');
+      if (!variantData) return;
+      try {
+        var variant = JSON.parse(variantData.textContent);
+        var priceEl = document.querySelector('#PeptidesPrice-' + sectionId + ' [data-product-price]');
+        if (priceEl && variant) {
+          // Shopify formats money server-side; use the raw cents value
+          // and a simple formatter that mirrors the store currency symbol.
+          // The `money_format` global is injected by Shopify.
+          var fmt = (window.Shopify && window.Shopify.money_format) ? window.Shopify.money_format : '€{{amount}}';
+          priceEl.textContent = formatMoney(variant.price, fmt);
+        }
+      } catch (e) {}
+    }
+
+    // Keyboard-accessible label clicks: pressing Enter/Space selects the radio
+    container.querySelectorAll('label.peptides-option-btn').forEach(function (label) {
+      label.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          label.click();
+        }
+      });
+    });
+
+    container.addEventListener('change', syncButtons);
+
+    // Initial sync
+    syncButtons();
+  }
+
+  // Minimal money formatter matching Shopify's {{amount}} / {{amount_no_decimals}}
+  function formatMoney(cents, format) {
+    var value = (cents / 100).toFixed(2);
+    return format
+      .replace('{{amount}}', value)
+      .replace('{{amount_no_decimals}}', Math.round(cents / 100))
+      .replace('{{amount_with_comma_separator}}', value.replace('.', ','))
+      .replace('{{amount_no_decimals_with_comma_separator}}', String(Math.round(cents / 100)));
+  }
+
+  // Initialise after DOM is ready
+  document.addEventListener('DOMContentLoaded', function () {
+    initPeptidesVariantUI('{{ section.id }}');
+  });
+
+  // Re-init after Shopify section renders in the theme editor
+  document.addEventListener('shopify:section:load', function (e) {
+    if (e.detail && e.detail.sectionId) {
+      initPeptidesVariantUI(e.detail.sectionId);
+    }
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Peptides Product",
+  "tag": "section",
+  "class": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sectie instellingen"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Afstand boven",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Afstand onder",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Peptides Product"
+    }
+  ]
+}
+{% endschema %}

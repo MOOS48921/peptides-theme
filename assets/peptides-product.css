@@ -1,0 +1,245 @@
+/* ============================================================
+   Peptides product page — custom styles
+   Overrides Dawn's variant pill colors and adds brand styling
+   ============================================================ */
+
+/* --- Layout ------------------------------------------------ */
+.peptides-product {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.peptides-product__grid {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 750px) {
+  .peptides-product__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 6rem;
+  }
+}
+
+/* --- Image column ------------------------------------------ */
+.peptides-product__media {
+  position: sticky;
+  top: 2rem;
+}
+
+.peptides-product__image {
+  width: 100%;
+  border-radius: 0.8rem;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #f7f7f7;
+}
+
+.peptides-product__image-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #f0f0f0;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 1.4rem;
+}
+
+/* --- Info column ------------------------------------------- */
+.peptides-product__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* --- Title ------------------------------------------------- */
+.peptides-product__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: #121212;
+}
+
+@media screen and (min-width: 750px) {
+  .peptides-product__title {
+    font-size: 3.2rem;
+  }
+}
+
+/* --- Stock indicator --------------------------------------- */
+.peptides-product__stock {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #1B6B3A;
+}
+
+.peptides-product__stock-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  background: #1B6B3A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.peptides-product__stock-icon svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --- Variant option groups --------------------------------- */
+.peptides-variant-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.peptides-variant-group__label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #121212;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.peptides-variant-group__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* --- Option button base ------------------------------------ */
+.peptides-option-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 0.6rem;
+  background: #fff;
+  color: #121212;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.peptides-option-btn:hover {
+  border-color: #121212;
+}
+
+/* --- Selected state: yellow/gold --------------------------- */
+.peptides-option-btn.is-selected,
+.peptides-option-btn[aria-pressed="true"] {
+  background: #F5C518;
+  border-color: #F5C518;
+  color: #121212;
+  font-weight: 600;
+}
+
+/* --- Disabled/unavailable state ---------------------------- */
+.peptides-option-btn.is-unavailable {
+  opacity: 0.45;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+/* --- Price row --------------------------------------------- */
+.peptides-product__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 0.8rem;
+  border-top: 1px solid #e8e8e8;
+}
+
+.peptides-product__price {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #121212;
+}
+
+.peptides-product__price-compare {
+  font-size: 1.6rem;
+  color: #888;
+  text-decoration: line-through;
+  margin-right: 1rem;
+}
+
+/* --- Add to cart button ------------------------------------ */
+.peptides-product__add-btn {
+  width: 100%;
+  padding: 1.6rem 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: #121212;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.peptides-product__add-btn:hover {
+  background: #2a2a2a;
+}
+
+.peptides-product__add-btn:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+/* --- Loading spinner inside button ------------------------ */
+.peptides-product__add-btn .loading__spinner {
+  display: none;
+}
+
+.peptides-product__add-btn.loading .loading__spinner {
+  display: inline-block;
+}
+
+/* --- Product form error ------------------------------------ */
+.peptides-product__form-error {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.4rem;
+  background: #fff5f5;
+  border: 1px solid #fca5a5;
+  border-radius: 0.6rem;
+  font-size: 1.3rem;
+  color: #dc2626;
+}
+
+/* --- Responsive tweaks ------------------------------------- */
+@media screen and (max-width: 749px) {
+  .peptides-product__media {
+    position: static;
+  }
+}
