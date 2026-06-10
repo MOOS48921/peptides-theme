@@ -1,0 +1,120 @@
+/* ============================================
+   PEPTIDESMEESTER — Retourzendingen Page
+   ============================================ */
+
+.retour-page {
+  background-color: #111;
+  min-height: 60vh;
+  padding: 60px 2rem 80px;
+  color: #ffffff;
+}
+
+.retour-page__title {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 3.2rem;
+  line-height: 1.2;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+.retour-page__intro {
+  font-size: 1.6rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 4.8rem;
+  max-width: 760px;
+  padding-bottom: 3.2rem;
+  border-bottom: 1px solid rgba(245, 197, 24, 0.15);
+}
+
+.retour-page__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 760px;
+}
+
+.retour-page__block {
+  padding: 3.2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.retour-page__block:last-child {
+  border-bottom: none;
+}
+
+.retour-page__heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #F5C518;
+  margin: 0 0 1.4rem;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+.retour-page__text {
+  font-size: 1.5rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 1.2rem;
+}
+
+.retour-page__text:last-of-type {
+  margin-bottom: 0;
+}
+
+.retour-page__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.retour-page__list li {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  padding-left: 2rem;
+  position: relative;
+}
+
+.retour-page__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  background-color: #F5C518;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.retour-page__email {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+  color: #F5C518;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245, 197, 24, 0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.retour-page__email:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+@media screen and (max-width: 749px) {
+  .retour-page {
+    padding: 40px 1.6rem 60px;
+  }
+
+  .retour-page__title {
+    font-size: 2.8rem;
+  }
+}
