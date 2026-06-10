@@ -2,21 +2,12 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "telegram-cta": {
-      "type": "peptides-telegram-cta",
-      "settings": {
-        "text": "Word lid van ons Telegram-kanaal en ontvang als eerste privékortingen, tijdelijke aanbiedingen en insider-updates die je nergens anders vindt.",
-        "button_label": "AANMELDEN",
-        "button_link": ""
-      }
-    },
     "footer": {
       "type": "footer",
       "settings": {}
     }
   },
   "order": [
-    "telegram-cta",
     "footer"
   ]
 }

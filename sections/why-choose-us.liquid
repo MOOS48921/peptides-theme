@@ -6,8 +6,8 @@
     <h2 class="why-choose-us__heading">{{ section.settings.heading }}</h2>
 
     <div class="why-choose-us__subtext">
-      <p>{{ section.settings.paragraph_1 }}</p>
-      <p>{{ section.settings.paragraph_2 }}</p>
+      {%- if section.settings.paragraph_1 != blank -%}<p>{{ section.settings.paragraph_1 }}</p>{%- endif -%}
+      {%- if section.settings.paragraph_2 != blank -%}<p>{{ section.settings.paragraph_2 }}</p>{%- endif -%}
     </div>
 
     <div class="why-choose-us__grid">

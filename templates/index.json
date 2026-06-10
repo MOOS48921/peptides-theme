@@ -7,9 +7,9 @@
         "heading": "WELKOM BIJ PEPTIDESMEESTER",
         "button_primary_label": "SHOP BUNDELS",
         "button_primary_link": "shopify://collections/all",
-        "button_secondary_label": "Volg ons op Telegram",
-        "button_secondary_subtext": "voor exclusieve aanbiedingen",
-        "button_secondary_link": "https://t.me/peptidesmeester",
+        "button_secondary_label": "",
+        "button_secondary_subtext": "",
+        "button_secondary_link": "",
         "padding_top": 96,
         "padding_bottom": 96
       }
@@ -19,7 +19,7 @@
       "settings": {
         "heading": "WAAROM ONDERZOEKERS KIEZEN VOOR PEPTIDESMEESTER",
         "paragraph_1": "Wij leveren in Europa geproduceerde peptiden met een geverifieerde zuiverheid van ≥99%. Elke batch wordt onafhankelijk getest en wordt geleverd met een Certificaat van Analyse.",
-        "paragraph_2": "Word lid van onze Telegram-community voor exclusieve aanbiedingen, onderzoeksupdates en directe ondersteuning van ons team.",
+        "paragraph_2": "",
         "usp1_title": "Laboratorium Getest",
         "usp1_text": "Alle producten getest op zuiverheid en kwaliteit",
         "usp2_title": "Verzending dezelfde dag",
