@@ -1,0 +1,53 @@
+{{ 'page-policy.css' | asset_url | stylesheet_tag }}
+<style>body,#MainContent,main#MainContent{background-color:#111!important}</style>
+
+<div class="policy-page page-width">
+  <div class="policy-page__inner">
+
+    <h1 class="policy-page__title">Privacybeleid</h1>
+    <p class="policy-page__subtitle">Laatst bijgewerkt: januari 2025</p>
+    <p class="policy-page__intro">Uw privacy is belangrijk voor ons.</p>
+
+    <div class="policy-page__sections">
+
+      <div class="policy-section">
+        <h2 class="policy-section__heading">1. Gegevensverzameling</h2>
+        <p class="policy-section__text">Wij verzamelen informatie die u verstrekt bij het plaatsen van bestellingen, waaronder naam, e-mailadres en verzendadres.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-section__heading">2. Gegevensgebruik</h2>
+        <p class="policy-section__text">Wij gebruiken uw gegevens om bestellingen te verwerken, updates te versturen en onze diensten te verbeteren.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-section__heading">3. Gegevensbescherming</h2>
+        <p class="policy-section__text">Wij nemen beveiligingsmaatregelen om uw persoonlijke gegevens te beschermen.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-section__heading">4. Cookies</h2>
+        <p class="policy-section__text">Wij gebruiken cookies om uw browse-ervaring te verbeteren. U kunt cookievoorkeuren beheren in uw browser.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-section__heading">5. Uw Rechten</h2>
+        <p class="policy-section__text">Je hebt het recht om je persoonsgegevens in te zien, te corrigeren of te verwijderen. Neem contact met ons op voor verzoeken.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-section__heading">6. Contact</h2>
+        <p class="policy-section__text">Voor vragen over ons privacybeleid: <a href="mailto:info@peptidesmeester.nl">info@peptidesmeester.nl</a></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Privacybeleid Page",
+  "settings": [],
+  "presets": [{ "name": "Privacybeleid Page" }]
+}
+{% endschema %}
