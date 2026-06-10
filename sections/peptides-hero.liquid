@@ -1,6 +1,10 @@
 {{ 'peptides-hero.css' | asset_url | stylesheet_tag }}
 
-<section class="peptides-hero">
+{%- assign hero_bg_url = 'https://cdn.shopify.com/s/files/1/1035/2767/8294/files/homepage.jpg?v=1781123316' -%}
+{%- if section.settings.hero_image != blank -%}
+  {%- assign hero_bg_url = section.settings.hero_image | image_url: width: 2000 -%}
+{%- endif -%}
+<section class="peptides-hero" style="--hero-bg-image: url('{{ hero_bg_url }}')">
   <div class="peptides-hero__inner page-width">
     <p class="peptides-hero__eyebrow">{{ section.settings.eyebrow_text }}</p>
     <h1 class="peptides-hero__heading">{{ section.settings.heading }}</h1>
@@ -42,6 +46,15 @@
   "name": "Peptides Hero",
   "tag": "section",
   "settings": [
+    {
+      "type": "header",
+      "content": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero background image"
+    },
     {
       "type": "text",
       "id": "eyebrow_text",
