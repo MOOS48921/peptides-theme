@@ -1,0 +1,100 @@
+/* ============================================
+   PEPTIDESMEESTER — Homepage Custom Styles
+   Header dark override + Announcement bar gold
+   ============================================ */
+
+/* Dark header override */
+.section-header .header-wrapper {
+  background-color: #111 !important;
+  border-bottom: 1px solid rgba(245, 197, 24, 0.2) !important;
+}
+
+.section-header .header {
+  background-color: #111 !important;
+}
+
+.section-header .header__heading-link,
+.section-header .header__heading-link:visited {
+  text-decoration: none;
+}
+
+/* Two-tone logo */
+.header__text-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  font-family: var(--font-heading-family);
+}
+
+.header__text-logo .logo-peptides {
+  color: #ffffff;
+}
+
+.header__text-logo .logo-meester {
+  color: #F5C518;
+}
+
+/* Nav links white on dark */
+.section-header .list-menu__item--link,
+.section-header .header__menu-item {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.section-header .list-menu__item--link:hover,
+.section-header .header__menu-item:hover {
+  color: #F5C518 !important;
+}
+
+/* Header icons white */
+.section-header .header__icon,
+.section-header .header__icon svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.section-header .header__icon:hover svg {
+  color: #F5C518 !important;
+  fill: #F5C518 !important;
+}
+
+/* Cart bubble */
+.section-header .cart-count-bubble {
+  background-color: #F5C518 !important;
+  color: #111 !important;
+}
+
+/* Country/language selector */
+.section-header .localization-form__select,
+.section-header .disclosure__button {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Mobile drawer trigger */
+.section-header .header__icon--menu svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* ============================================
+   GOLD ANNOUNCEMENT BAR
+   ============================================ */
+
+.peptides-announcement-bar {
+  background-color: #F5C518;
+  color: #111;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.peptides-announcement-bar a {
+  color: #111;
+  text-decoration: none;
+}
+
+.peptides-announcement-bar a:hover {
+  text-decoration: underline;
+}

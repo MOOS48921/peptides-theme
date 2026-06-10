@@ -1,0 +1,120 @@
+{{ 'peptides-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="peptides-hero">
+  <div class="peptides-hero__inner page-width">
+    <p class="peptides-hero__eyebrow">{{ section.settings.eyebrow_text }}</p>
+    <h1 class="peptides-hero__heading">{{ section.settings.heading }}</h1>
+    <div class="peptides-hero__divider" aria-hidden="true"></div>
+    <div class="peptides-hero__buttons">
+      {%- if section.settings.button_primary_label != blank -%}
+        <a
+          href="{{ section.settings.button_primary_link | default: '#' }}"
+          class="peptides-hero__btn peptides-hero__btn--primary"
+        >
+          {{ section.settings.button_primary_label }}
+        </a>
+      {%- endif -%}
+
+      {%- if section.settings.button_secondary_label != blank -%}
+        <a
+          href="{{ section.settings.button_secondary_link | default: '#' }}"
+          class="peptides-hero__btn peptides-hero__btn--secondary"
+        >
+          <span class="peptides-hero__btn-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
+            </svg>
+          </span>
+          <span class="peptides-hero__btn-text">
+            <span class="peptides-hero__btn-label">{{ section.settings.button_secondary_label }}</span>
+            {%- if section.settings.button_secondary_subtext != blank -%}
+              <span class="peptides-hero__btn-subtext">{{ section.settings.button_secondary_subtext }}</span>
+            {%- endif -%}
+          </span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Peptides Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Eyebrow text",
+      "default": "WAAR KWALITEIT HEERST"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "WELKOM BIJ PEPTIDESMEESTER"
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "text",
+      "id": "button_primary_label",
+      "label": "Label",
+      "default": "SHOP BUNDELS"
+    },
+    {
+      "type": "url",
+      "id": "button_primary_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "text",
+      "id": "button_secondary_label",
+      "label": "Label",
+      "default": "Volg ons op Telegram"
+    },
+    {
+      "type": "text",
+      "id": "button_secondary_subtext",
+      "label": "Subtext",
+      "default": "voor exclusieve aanbiedingen"
+    },
+    {
+      "type": "url",
+      "id": "button_secondary_link",
+      "label": "Link"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 40,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 40,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 96
+    }
+  ],
+  "presets": [
+    {
+      "name": "Peptides Hero"
+    }
+  ]
+}
+{% endschema %}

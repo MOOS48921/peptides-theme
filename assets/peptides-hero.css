@@ -1,0 +1,182 @@
+/* ============================================
+   PEPTIDESMEESTER — Hero Section
+   ============================================ */
+
+.peptides-hero {
+  background-color: #111;
+  width: 100%;
+  padding-top: var(--hero-padding-top, 96px);
+  padding-bottom: var(--hero-padding-bottom, 96px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background texture */
+.peptides-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245, 197, 24, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.peptides-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Eyebrow line */
+.peptides-hero__eyebrow {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 1.6rem;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+/* Main heading */
+.peptides-hero__heading {
+  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #F5C518;
+  line-height: 1.08;
+  margin: 0 0 2.4rem;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+/* Gold divider */
+.peptides-hero__divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #F5C518 20%, #F5C518 80%, transparent);
+  margin: 0 auto 3.6rem;
+  border-radius: 2px;
+}
+
+/* Buttons row */
+.peptides-hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Base button */
+.peptides-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 3.2rem;
+  border-radius: 4px;
+  font-family: var(--font-heading-family, sans-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Primary: gold filled */
+.peptides-hero__btn--primary {
+  background-color: #F5C518;
+  color: #111;
+  border: 2px solid #F5C518;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 1.4rem 3.6rem;
+}
+
+.peptides-hero__btn--primary:hover {
+  background-color: #e0b310;
+  border-color: #e0b310;
+  color: #111;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(245, 197, 24, 0.35);
+}
+
+/* Secondary: dark outline with Telegram icon + subtext */
+.peptides-hero__btn--secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1.2rem 2.8rem;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.peptides-hero__btn--secondary:hover {
+  border-color: #F5C518;
+  color: #F5C518;
+  transform: translateY(-1px);
+}
+
+.peptides-hero__btn--secondary:hover .peptides-hero__btn-icon svg {
+  fill: #F5C518;
+}
+
+.peptides-hero__btn-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.peptides-hero__btn-icon svg {
+  fill: #ffffff;
+  transition: fill 0.2s ease;
+}
+
+.peptides-hero__btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.peptides-hero__btn-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.peptides-hero__btn-subtext {
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.7;
+  line-height: 1.2;
+}
+
+/* Responsive */
+@media screen and (max-width: 749px) {
+  .peptides-hero__heading {
+    font-size: clamp(2.4rem, 8vw, 3.6rem);
+  }
+
+  .peptides-hero__buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .peptides-hero__btn {
+    justify-content: center;
+  }
+
+  .peptides-hero__btn--secondary {
+    text-align: center;
+  }
+
+  .peptides-hero__btn-text {
+    align-items: center;
+  }
+}
