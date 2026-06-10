@@ -1,0 +1,43 @@
+{{ 'peptides-telegram-cta.css' | asset_url | stylesheet_tag }}
+
+<section class="peptides-tg-cta">
+  <div class="peptides-tg-cta__inner page-width">
+    <p class="peptides-tg-cta__text">{{ section.settings.text }}</p>
+    <a href="{{ section.settings.button_link | default: '#' }}" class="peptides-tg-cta__btn" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
+      </svg>
+      {{ section.settings.button_label }}
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Telegram CTA",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Word lid van ons Telegram-kanaal en ontvang als eerste privékortingen, tijdelijke aanbiedingen en insider-updates die je nergens anders vindt."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "AANMELDEN"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Telegram CTA"
+    }
+  ]
+}
+{% endschema %}

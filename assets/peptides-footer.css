@@ -1,11 +1,11 @@
 /* ── Peptides Footer ─────────────────────────────────────────── */
 
 .peptides-footer {
-  background: #0d0d0d;
+  background: #111;
   color: #fff;
   padding: 60px 0 0;
   margin-top: 0;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   line-height: 1.7;
 }
 
@@ -21,7 +21,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 40px 32px;
   padding-bottom: 40px;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid rgba(245, 197, 24, 0.15);
 }
 
 @media (max-width: 900px) {
@@ -39,9 +39,9 @@
 /* ── Column headings ── */
 .peptides-footer__heading {
   color: #F5C518;
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   margin: 0 0 16px;
 }
@@ -58,13 +58,15 @@
 }
 
 .peptides-footer__link {
-  color: #ccc;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.2s;
+  opacity: 0.85;
 }
 
 .peptides-footer__link:hover {
   color: #F5C518;
+  opacity: 1;
 }
 
 /* ── Inline link list (samenwerking) ── */
@@ -89,10 +91,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #222;
+  background: #2a2a2a;
   color: #fff;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
@@ -110,14 +112,19 @@
   gap: 6px;
   background: #1a1a1a;
   border: 1px solid #333;
-  border-radius: 6px;
-  padding: 6px 10px;
+  border-radius: 20px;
+  padding: 7px 14px;
   cursor: pointer;
   position: relative;
+  transition: border-color 0.2s;
+}
+
+.peptides-footer__lang:hover {
+  border-color: #F5C518;
 }
 
 .peptides-footer__lang-flag {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1;
 }
 
@@ -125,7 +132,7 @@
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 1.3rem;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
@@ -149,7 +156,7 @@
 /* ── Samenwerking ── */
 .peptides-footer__samenwerking {
   padding: 28px 0;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid rgba(245, 197, 24, 0.15);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -158,9 +165,9 @@
 
 .peptides-footer__samenwerking-heading {
   color: #F5C518;
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   margin: 0;
   flex-shrink: 0;
@@ -173,77 +180,45 @@
 /* ── Bottom bar ── */
 .peptides-footer__bottom {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 24px 0 32px;
+  gap: 20px;
+  padding: 28px 0 36px;
 }
 
 /* ── Payment icons ── */
 .peptides-footer__payment-icons {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.peptides-footer__pay-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.peptides-footer__pay-img {
   height: 28px;
-  min-width: 44px;
-  padding: 0 10px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.peptides-footer__pay-icon svg {
-  height: 14px;
   width: auto;
+  border-radius: 4px;
+  background: #ffffff;
+  padding: 3px 6px;
+  object-fit: contain;
   display: block;
-  color: #1a1a1a;
 }
 
-.peptides-footer__pay-icon[title="Apple Pay"] {
+.peptides-footer__pay-img--dark {
   background: #000;
-  border-color: #000;
-}
-
-.peptides-footer__pay-icon[title="Apple Pay"] svg {
-  color: #fff;
-}
-
-.peptides-footer__pay-icon[title="iDEAL"] svg {
-  height: 20px;
-  width: 38px;
-}
-
-.peptides-footer__pay-icon[title="Bancontact"] {
-  background: #005498;
-  border-color: #005498;
-  padding: 0 8px;
-}
-
-.peptides-footer__pay-icon[title="Bancontact"] svg {
-  height: 20px;
-  width: 54px;
 }
 
 /* ── Copyright ── */
 .peptides-footer__copyright {
-  color: #555;
-  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.2rem;
   margin: 0;
+  text-align: center;
 }
 
 @media (max-width: 640px) {
   .peptides-footer__bottom {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 }
