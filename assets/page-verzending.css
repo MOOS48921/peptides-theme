@@ -1,0 +1,101 @@
+/* ============================================
+   PEPTIDESMEESTER — Verzending Page
+   ============================================ */
+
+.verzending-page {
+  background-color: #111;
+  min-height: 60vh;
+  padding: 60px 2rem 80px;
+  color: #ffffff;
+}
+
+.verzending-page__title {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #F5C518;
+  margin: 0 0 4rem;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+/* ── Shipping table ── */
+.verzending-page__table-wrap {
+  overflow-x: auto;
+  margin-bottom: 5.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(245, 197, 24, 0.2);
+}
+
+.verzending-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.5rem;
+  min-width: 340px;
+}
+
+.verzending-table thead tr {
+  background-color: rgba(245, 197, 24, 0.08);
+}
+
+.verzending-table th {
+  padding: 1.4rem 2rem;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #F5C518;
+  border-bottom: 1px solid rgba(245, 197, 24, 0.2);
+}
+
+.verzending-table td {
+  padding: 1.4rem 2rem;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.verzending-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.verzending-table tbody tr:hover td {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Info blocks ── */
+.verzending-page__info {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  max-width: 640px;
+}
+
+.verzending-page__subheading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F5C518;
+  margin: 0 0 1rem;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+.verzending-page__text {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 749px) {
+  .verzending-page {
+    padding: 40px 1.6rem 60px;
+  }
+
+  .verzending-table th,
+  .verzending-table td {
+    padding: 1.2rem 1.4rem;
+  }
+}

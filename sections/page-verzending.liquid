@@ -1,0 +1,62 @@
+{{ 'page-verzending.css' | asset_url | stylesheet_tag }}
+
+<div class="verzending-page page-width">
+
+  <h1 class="verzending-page__title">Verzending</h1>
+
+  <div class="verzending-page__table-wrap">
+    <table class="verzending-table">
+      <thead>
+        <tr>
+          <th>Bestemming</th>
+          <th>Standaard</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nederland</td>
+          <td>1-2 dagen / €4,95</td>
+        </tr>
+        <tr>
+          <td>België</td>
+          <td>2-3 dagen / €9,95</td>
+        </tr>
+        <tr>
+          <td>Duitsland</td>
+          <td>2-4 dagen / €14,95</td>
+        </tr>
+        <tr>
+          <td>Overig EU</td>
+          <td>3-7 dagen / €14,95</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="verzending-page__info">
+
+    <div class="verzending-page__block">
+      <h2 class="verzending-page__subheading">Verzendproces</h2>
+      <p class="verzending-page__text">Bestellingen die vóór 14:00 uur op werkdagen worden geplaatst, worden dezelfde dag verzonden.</p>
+    </div>
+
+    <div class="verzending-page__block">
+      <h2 class="verzending-page__subheading">Tracking</h2>
+      <p class="verzending-page__text">U ontvangt een track & trace-link per e-mail zodra uw bestelling is verzonden.</p>
+    </div>
+
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Verzending Page",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Verzending Page"
+    }
+  ]
+}
+{% endschema %}
