@@ -1,0 +1,239 @@
+{{ 'page-calculator.css' | asset_url | stylesheet_tag }}
+
+<div class="calc-page page-width">
+
+  <div class="calc-page__header">
+    <h1 class="calc-page__title">Peptide Calculator</h1>
+    <p class="calc-page__subtitle">Bereken het exacte aantal eenheden dat u uit uw spuit moet optrekken</p>
+  </div>
+
+  <div class="calc-page__body">
+
+    {%- comment -%} LEFT COLUMN — Syringe volume {%- endcomment -%}
+    <div class="calc-col calc-col--left">
+      <h2 class="calc-col__heading">Wat is het totale volume van uw spuit?</h2>
+
+      <div class="calc-syringe-grid">
+        <button type="button" class="calc-syringe-card calc-syringe-card--selected" data-syringe="0.3" aria-pressed="true">
+          <div class="calc-syringe-card__img" aria-hidden="true">
+            <svg viewBox="0 0 80 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="10" width="20" height="120" rx="4" fill="#2a2a2a" stroke="#F5C518" stroke-width="2"/>
+              <rect x="36" y="6" width="8" height="10" rx="2" fill="#3a3a3a" stroke="#F5C518" stroke-width="1.5"/>
+              <rect x="38" y="130" width="4" height="18" rx="2" fill="#888"/>
+              <rect x="32" y="40" width="16" height="4" rx="1" fill="#F5C518" opacity="0.4"/>
+              <rect x="32" y="60" width="16" height="4" rx="1" fill="#F5C518" opacity="0.4"/>
+              <rect x="32" y="80" width="16" height="4" rx="1" fill="#F5C518" opacity="0.4"/>
+              <rect x="32" y="100" width="16" height="4" rx="1" fill="#F5C518" opacity="0.4"/>
+              <rect x="20" y="128" width="40" height="6" rx="2" fill="#3a3a3a" stroke="#888" stroke-width="1"/>
+            </svg>
+          </div>
+          <span class="calc-syringe-card__label">0.3 ml</span>
+        </button>
+
+        <button type="button" class="calc-syringe-card" data-syringe="0.5" aria-pressed="false">
+          <div class="calc-syringe-card__img" aria-hidden="true">
+            <svg viewBox="0 0 80 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="10" width="20" height="120" rx="4" fill="#2a2a2a" stroke="#555" stroke-width="2"/>
+              <rect x="36" y="6" width="8" height="10" rx="2" fill="#3a3a3a" stroke="#555" stroke-width="1.5"/>
+              <rect x="38" y="130" width="4" height="18" rx="2" fill="#888"/>
+              <rect x="32" y="35" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="32" y="55" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="32" y="75" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="32" y="95" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="32" y="115" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="20" y="128" width="40" height="6" rx="2" fill="#3a3a3a" stroke="#888" stroke-width="1"/>
+            </svg>
+          </div>
+          <span class="calc-syringe-card__label">0.5 ml</span>
+        </button>
+
+        <button type="button" class="calc-syringe-card" data-syringe="1.0" aria-pressed="false">
+          <div class="calc-syringe-card__img" aria-hidden="true">
+            <svg viewBox="0 0 80 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="4" width="20" height="132" rx="4" fill="#2a2a2a" stroke="#555" stroke-width="2"/>
+              <rect x="36" y="1" width="8" height="10" rx="2" fill="#3a3a3a" stroke="#555" stroke-width="1.5"/>
+              <rect x="38" y="136" width="4" height="18" rx="2" fill="#888"/>
+              <rect x="32" y="25" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="32" y="45" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="32" y="65" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="32" y="85" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="32" y="105" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="32" y="118" width="16" height="3" rx="1" fill="#555" opacity="0.6"/>
+              <rect x="20" y="134" width="40" height="6" rx="2" fill="#3a3a3a" stroke="#888" stroke-width="1"/>
+            </svg>
+          </div>
+          <span class="calc-syringe-card__label">1.0 ml</span>
+        </button>
+      </div>
+    </div>
+
+    {%- comment -%} RIGHT COLUMN — Inputs {%- endcomment -%}
+    <div class="calc-col calc-col--right">
+
+      {%- comment -%} Q1 — mg in vial {%- endcomment -%}
+      <div class="calc-question">
+        <h3 class="calc-question__label">Hoeveel mg zit er in het flesje?</h3>
+        <div class="calc-btn-group" data-group="vial">
+          <button type="button" class="calc-btn calc-btn--selected" data-value="5" aria-pressed="true">5 mg</button>
+          <button type="button" class="calc-btn" data-value="10" aria-pressed="false">10 mg</button>
+          <button type="button" class="calc-btn" data-value="15" aria-pressed="false">15 mg</button>
+          <button type="button" class="calc-btn calc-btn--overig" data-value="overig" aria-pressed="false">Overig</button>
+        </div>
+        <div class="calc-custom-input" id="vial-custom" hidden>
+          <input type="number" class="calc-input" id="vial-custom-value" placeholder="Voer mg in..." min="0.1" step="0.1" aria-label="Aangepaste mg waarde">
+        </div>
+      </div>
+
+      {%- comment -%} Q2 — Bacteriostatisch water {%- endcomment -%}
+      <div class="calc-question">
+        <h3 class="calc-question__label">Hoeveel bacteriostatisch water voegt u toe?</h3>
+        <div class="calc-btn-group" data-group="water">
+          <button type="button" class="calc-btn" data-value="1" aria-pressed="false">1 ml</button>
+          <button type="button" class="calc-btn" data-value="2" aria-pressed="false">2 ml</button>
+          <button type="button" class="calc-btn calc-btn--selected" data-value="3" aria-pressed="true">3 ml</button>
+          <button type="button" class="calc-btn" data-value="5" aria-pressed="false">5 ml</button>
+          <button type="button" class="calc-btn calc-btn--overig" data-value="overig" aria-pressed="false">Overig</button>
+        </div>
+        <div class="calc-custom-input" id="water-custom" hidden>
+          <input type="number" class="calc-input" id="water-custom-value" placeholder="Voer ml in..." min="0.1" step="0.1" aria-label="Aangepaste ml waarde">
+        </div>
+      </div>
+
+      {%- comment -%} Q3 — Desired dose {%- endcomment -%}
+      <div class="calc-question">
+        <h3 class="calc-question__label">Hoeveel mg wilt u doseren?</h3>
+        <div class="calc-btn-group" data-group="dose">
+          <button type="button" class="calc-btn" data-value="0.5" aria-pressed="false">0.5 mg</button>
+          <button type="button" class="calc-btn calc-btn--selected" data-value="1" aria-pressed="true">1 mg</button>
+          <button type="button" class="calc-btn" data-value="2" aria-pressed="false">2 mg</button>
+          <button type="button" class="calc-btn" data-value="3" aria-pressed="false">3 mg</button>
+          <button type="button" class="calc-btn calc-btn--overig" data-value="overig" aria-pressed="false">Overig</button>
+        </div>
+        <div class="calc-custom-input" id="dose-custom" hidden>
+          <input type="number" class="calc-input" id="dose-custom-value" placeholder="Voer mg in..." min="0.01" step="0.01" aria-label="Aangepaste dosis waarde">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {%- comment -%} RESULT BOX {%- endcomment -%}
+  <div class="calc-result" id="calc-result" aria-live="polite">
+    <div class="calc-result__content">
+      <p class="calc-result__text">
+        Om een dosis te krijgen van
+        <strong class="calc-result__value" id="result-dose">1 mg</strong>,
+        trek de spuit op tot
+        <strong class="calc-result__value" id="result-units">20 eenheden</strong>
+      </p>
+      <p class="calc-result__formula" id="result-formula">
+        (1 mg ÷ 5 mg) × (3 ml ÷ 0.3 ml) × 100 = 20 eenheden
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // State
+  var state = {
+    syringe: 0.3,
+    vial: 5,
+    water: 3,
+    dose: 1
+  };
+
+  function calculate() {
+    if (!state.syringe || !state.vial || !state.water || !state.dose) return;
+    // Units = (dose / vial_mg) × (water_ml / syringe_ml) × 100
+    var units = (state.dose / state.vial) * (state.water / state.syringe) * 100;
+    units = Math.round(units * 10) / 10;
+
+    var doseEl = document.getElementById('result-dose');
+    var unitsEl = document.getElementById('result-units');
+    var formulaEl = document.getElementById('result-formula');
+
+    if (doseEl) doseEl.textContent = state.dose + ' mg';
+    if (unitsEl) unitsEl.textContent = units + ' eenheden';
+    if (formulaEl) {
+      formulaEl.textContent = '(' + state.dose + ' mg ÷ ' + state.vial + ' mg) × (' + state.water + ' ml ÷ ' + state.syringe + ' ml) × 100 = ' + units + ' eenheden';
+    }
+  }
+
+  // Syringe card selection
+  var syringeCards = document.querySelectorAll('.calc-syringe-card');
+  syringeCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      syringeCards.forEach(function (c) {
+        c.classList.remove('calc-syringe-card--selected');
+        c.setAttribute('aria-pressed', 'false');
+        c.querySelector('svg rect:first-child') && c.querySelectorAll('svg rect, svg line').forEach(function(el){ el.style.stroke = ''; });
+      });
+      card.classList.add('calc-syringe-card--selected');
+      card.setAttribute('aria-pressed', 'true');
+      state.syringe = parseFloat(card.dataset.syringe);
+      calculate();
+    });
+  });
+
+  // Button group selection
+  var groups = { vial: null, water: null, dose: null };
+  var groupMap = { vial: 'vial', water: 'water', dose: 'dose' };
+
+  document.querySelectorAll('.calc-btn-group').forEach(function (group) {
+    var groupName = group.dataset.group;
+    var customWrap = document.getElementById(groupName + '-custom');
+    var customInput = document.getElementById(groupName + '-custom-value');
+
+    group.querySelectorAll('.calc-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        // Deselect all in group
+        group.querySelectorAll('.calc-btn').forEach(function (b) {
+          b.classList.remove('calc-btn--selected');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('calc-btn--selected');
+        btn.setAttribute('aria-pressed', 'true');
+
+        if (btn.dataset.value === 'overig') {
+          customWrap.hidden = false;
+          customInput.focus();
+          state[groupName] = null;
+        } else {
+          customWrap.hidden = true;
+          state[groupName] = parseFloat(btn.dataset.value);
+          calculate();
+        }
+      });
+    });
+
+    if (customInput) {
+      customInput.addEventListener('input', function () {
+        var val = parseFloat(customInput.value);
+        if (!isNaN(val) && val > 0) {
+          state[groupName] = val;
+          calculate();
+        }
+      });
+    }
+  });
+
+  // Initial calculation
+  calculate();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Peptide Calculator",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Peptide Calculator"
+    }
+  ]
+}
+{% endschema %}

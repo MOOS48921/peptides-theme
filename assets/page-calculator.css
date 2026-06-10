@@ -1,0 +1,246 @@
+/* ============================================
+   PEPTIDESMEESTER — Peptide Calculator Page
+   ============================================ */
+
+.calc-page {
+  background-color: #111;
+  min-height: 60vh;
+  padding: 60px 2rem 80px;
+  color: #ffffff;
+}
+
+/* ── Header ── */
+.calc-page__header {
+  text-align: center;
+  margin-bottom: 5.6rem;
+}
+
+.calc-page__title {
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1.2rem;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+.calc-page__subtitle {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Two-column layout ── */
+.calc-page__body {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+/* ── Column headings ── */
+.calc-col__heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 2.4rem;
+  line-height: 1.4;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+/* ── LEFT: Syringe cards ── */
+.calc-syringe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.calc-syringe-card {
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 2rem 1.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+  font-family: inherit;
+}
+
+.calc-syringe-card:hover {
+  border-color: rgba(245, 197, 24, 0.5);
+  background: #1f1f1f;
+  transform: translateY(-2px);
+}
+
+.calc-syringe-card--selected {
+  border-color: #F5C518 !important;
+  background: rgba(245, 197, 24, 0.06) !important;
+}
+
+.calc-syringe-card__img {
+  width: 52px;
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc-syringe-card__img svg {
+  width: 100%;
+  height: 100%;
+}
+
+.calc-syringe-card__label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+/* ── RIGHT: Questions ── */
+.calc-col--right {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.calc-question__label {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1.2rem;
+  line-height: 1.4;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+/* ── Button groups ── */
+.calc-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.calc-btn {
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.calc-btn:hover {
+  border-color: rgba(245, 197, 24, 0.5);
+  background: #222;
+}
+
+.calc-btn--selected {
+  border-color: #F5C518 !important;
+  background: rgba(245, 197, 24, 0.1) !important;
+  color: #F5C518 !important;
+}
+
+.calc-btn--overig {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.calc-btn--overig.calc-btn--selected {
+  color: #F5C518 !important;
+}
+
+/* ── Custom input ── */
+.calc-custom-input {
+  margin-top: 1rem;
+}
+
+.calc-input {
+  background: #1a1a1a;
+  border: 2px solid #F5C518;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 1rem 1.4rem;
+  width: 100%;
+  max-width: 200px;
+  outline: none;
+  font-family: inherit;
+  transition: box-shadow 0.2s;
+}
+
+.calc-input:focus {
+  box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.2);
+}
+
+.calc-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Result box ── */
+.calc-result {
+  background: #1a1a1a;
+  border: 1px solid rgba(245, 197, 24, 0.25);
+  border-radius: 12px;
+  padding: 3.2rem 4rem;
+  text-align: center;
+}
+
+.calc-result__text {
+  font-size: 2rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0 0 1.2rem;
+  font-weight: 500;
+}
+
+.calc-result__value {
+  color: #F5C518;
+  font-weight: 800;
+}
+
+.calc-result__formula {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+  font-family: monospace;
+  letter-spacing: 0.02em;
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 989px) {
+  .calc-page__body {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .calc-syringe-grid {
+    max-width: 360px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .calc-page {
+    padding: 40px 1.6rem 60px;
+  }
+
+  .calc-result {
+    padding: 2.4rem 2rem;
+  }
+
+  .calc-result__text {
+    font-size: 1.7rem;
+  }
+
+  .calc-syringe-grid {
+    max-width: 100%;
+  }
+}
