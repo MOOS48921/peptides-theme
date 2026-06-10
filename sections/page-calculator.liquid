@@ -1,5 +1,23 @@
 {{ 'page-calculator.css' | asset_url | stylesheet_tag }}
 
+{%- comment -%} Force dark background on every wrapper Dawn applies to this page {%- endcomment -%}
+<style>
+  body,
+  .color-scheme-1,
+  .color-background-1,
+  main#MainContent,
+  #MainContent,
+  .main-content,
+  .template-page {
+    background-color: #111 !important;
+    color: #ffffff !important;
+  }
+  /* Neutralise any section padding Dawn adds around the section */
+  .section-template--page-calculator-main-section-1 {
+    background-color: #111 !important;
+  }
+</style>
+
 <div class="calc-page page-width">
 
   <div class="calc-page__header">
