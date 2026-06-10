@@ -1,0 +1,218 @@
+{{ 'page-helpcentrum.css' | asset_url | stylesheet_tag }}
+
+<style>
+  body, #MainContent, main#MainContent { background-color: #111 !important; }
+</style>
+
+<div class="help-page page-width">
+
+  <div class="help-page__header">
+    <h1 class="help-page__title">Helpcentrum</h1>
+    <p class="help-page__subtitle">Vind antwoorden op veelgestelde vragen over onze producten en diensten.</p>
+  </div>
+
+  {%- comment -%} SECTION 1 — Bestellen & Betalen {%- endcomment -%}
+  <div class="help-section">
+    <h2 class="help-section__heading"><span class="help-section__emoji" aria-hidden="true">🛒</span> Bestellen &amp; Betalen</h2>
+    <div class="help-accordion-group">
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Welke betaalmethoden bieden jullie aan?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>Wij accepteren iDEAL, Bancontact, creditcard (Visa/Mastercard), PayPal en Apple Pay.</p>
+        </div>
+      </div>
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Wordt mijn betaling direct bevestigd?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>Ja, u ontvangt direct een bevestigingsmail na een succesvolle betaling.</p>
+        </div>
+      </div>
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Hoe wordt mijn bestelling verpakt?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>Alle bestellingen worden verzonden in veilige, discrete verpakking.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {%- comment -%} SECTION 2 — Verzending {%- endcomment -%}
+  <div class="help-section">
+    <h2 class="help-section__heading"><span class="help-section__emoji" aria-hidden="true">🚚</span> Verzending</h2>
+    <div class="help-accordion-group">
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Naar welke landen verzenden jullie?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>Wij verzenden vanuit Nederland naar alle landen binnen de Europese Unie. De levertijd bedraagt 1–5 werkdagen, afhankelijk van de locatie.</p>
+        </div>
+      </div>
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Wat zijn de verzendkosten?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>Nederland: €4,95 (1–2 dagen). België: €9,95 (2–3 dagen). Duitsland: €14,95 (2–4 dagen). Overig EU: €14,95 (3–7 dagen). Gratis verzending vanaf €250.</p>
+        </div>
+      </div>
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Ontvang ik een trackinglink?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>Ja, zodra uw bestelling is verzonden ontvangt u automatisch een track &amp; trace-link per e-mail.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {%- comment -%} SECTION 3 — Retourzendingen & Terugbetalingen {%- endcomment -%}
+  <div class="help-section">
+    <h2 class="help-section__heading"><span class="help-section__emoji" aria-hidden="true">🔄</span> Retourzendingen &amp; Terugbetalingen</h2>
+    <div class="help-accordion-group">
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Accepteren jullie retourzendingen?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>Nee. Wij accepteren geen retourzendingen. Alle verkopen zijn definitief. Controleer je bestelling zorgvuldig voordat je de aankoop afrondt.</p>
+        </div>
+      </div>
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Kan ik een terugbetaling krijgen?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>Terugbetalingen zijn alleen mogelijk bij beschadigde of incorrecte leveringen, mits binnen 48 uur gemeld met foto's.</p>
+        </div>
+      </div>
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Kan ik een product ruilen?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>Producten kunnen niet worden geruild vanwege de aard van de chemicaliën en veiligheidsredenen.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {%- comment -%} SECTION 4 — Contact & Ondersteuning {%- endcomment -%}
+  <div class="help-section">
+    <h2 class="help-section__heading"><span class="help-section__emoji" aria-hidden="true">💬</span> Contact &amp; Ondersteuning</h2>
+    <div class="help-accordion-group">
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Hoe kan ik contact met jullie opnemen?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>De snelste manier om ons te bereiken is via:</p>
+          <ul class="help-accordion__list">
+            <li>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/message/CTSUZSQFU36LH1" target="_blank" rel="noopener" class="help-accordion__link">wa.me/message/CTSUZSQFU36LH1</a> → Reactie binnen 2–3 uur</li>
+            <li>📧 <strong>E-mail:</strong> <a href="mailto:info@peptidesmeester.nl" class="help-accordion__link">info@peptidesmeester.nl</a> → Reactie binnen 24 uur</li>
+          </ul>
+          <p>Voor dringende vragen is WhatsApp uw beste optie!</p>
+        </div>
+      </div>
+
+      <div class="help-accordion">
+        <button class="help-accordion__trigger" type="button" aria-expanded="false">
+          <span class="help-accordion__question">Wat zijn uw openingstijden?</span>
+          <span class="help-accordion__chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+        <div class="help-accordion__body" hidden>
+          <p>Wij zijn bereikbaar op werkdagen van 09:00 tot 18:00 uur. WhatsApp berichten worden ook buiten kantooruren beantwoord.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  document.querySelectorAll('.help-accordion__trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var accordion = trigger.closest('.help-accordion');
+      var body = accordion.querySelector('.help-accordion__body');
+      var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+      if (isOpen) {
+        trigger.setAttribute('aria-expanded', 'false');
+        body.hidden = true;
+        accordion.classList.remove('help-accordion--open');
+      } else {
+        trigger.setAttribute('aria-expanded', 'true');
+        body.hidden = false;
+        accordion.classList.add('help-accordion--open');
+      }
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Helpcentrum Page",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Helpcentrum Page"
+    }
+  ]
+}
+{% endschema %}

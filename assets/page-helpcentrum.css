@@ -1,0 +1,197 @@
+/* ============================================
+   PEPTIDESMEESTER — Helpcentrum Page
+   ============================================ */
+
+body, #MainContent, main#MainContent {
+  background-color: #111 !important;
+}
+
+.help-page {
+  background-color: #111 !important;
+  min-height: 60vh;
+  padding: 64px 2rem 96px;
+  color: #ffffff;
+}
+
+/* ── Header ── */
+.help-page__header {
+  text-align: center;
+  margin-bottom: 6.4rem;
+}
+
+.help-page__title {
+  font-size: clamp(3rem, 5vw, 4.4rem);
+  font-weight: 800;
+  color: #ffffff !important;
+  margin: 0 0 1.2rem;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+.help-page__subtitle {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.45) !important;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── FAQ Section block ── */
+.help-section {
+  margin-bottom: 5.6rem;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.help-section:last-child {
+  margin-bottom: 0;
+}
+
+.help-section__heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #F5C518 !important;
+  margin: 0 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-heading-family, sans-serif);
+  letter-spacing: 0.02em;
+}
+
+.help-section__emoji {
+  font-style: normal;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+/* ── Accordion group ── */
+.help-accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Individual accordion card ── */
+.help-accordion {
+  background: #1a1a1a !important;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.help-accordion--open {
+  border-color: transparent;
+  border-left: 3px solid #F5C518;
+  border-top: 1px solid #2a2a2a;
+  border-right: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* ── Trigger button ── */
+.help-accordion__trigger {
+  width: 100%;
+  background: transparent !important;
+  border: none;
+  padding: 1.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.help-accordion__trigger:hover .help-accordion__question {
+  color: #ffffff !important;
+}
+
+/* ── Question text ── */
+.help-accordion__question {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #F5C518 !important;
+  line-height: 1.4;
+  flex: 1;
+  transition: color 0.2s;
+}
+
+/* ── Chevron ── */
+.help-accordion__chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F5C518;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.help-accordion--open .help-accordion__chevron {
+  transform: rotate(180deg);
+}
+
+/* ── Answer body ── */
+.help-accordion__body {
+  padding: 0 2rem 1.8rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.help-accordion__body p {
+  font-size: 1.45rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.82) !important;
+  margin: 1.2rem 0 0;
+}
+
+.help-accordion__body p:first-child {
+  margin-top: 1.4rem;
+}
+
+/* ── List inside answer ── */
+.help-accordion__list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.help-accordion__list li {
+  font-size: 1.45rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82) !important;
+  padding-left: 0;
+}
+
+/* ── Links inside answers ── */
+.help-accordion__link {
+  color: #F5C518 !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245, 197, 24, 0.35);
+  padding-bottom: 1px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.help-accordion__link:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 749px) {
+  .help-page {
+    padding: 40px 1.6rem 64px;
+  }
+
+  .help-accordion__trigger {
+    padding: 1.6rem 1.6rem;
+  }
+
+  .help-accordion__body {
+    padding: 0 1.6rem 1.6rem;
+  }
+}
