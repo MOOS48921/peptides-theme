@@ -4,6 +4,10 @@
 
 .peptides-hero {
   background-color: #111;
+  background-image: var(--hero-bg-image);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   width: 100%;
   padding-top: var(--hero-padding-top, 96px);
   padding-bottom: var(--hero-padding-bottom, 96px);
@@ -12,12 +16,12 @@
   overflow: hidden;
 }
 
-/* Subtle background texture */
+/* Dark overlay for text readability */
 .peptides-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245, 197, 24, 0.06) 0%, transparent 70%);
+  background: rgba(0, 0, 0, 0.45);
   pointer-events: none;
 }
 
