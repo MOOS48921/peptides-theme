@@ -14,6 +14,24 @@
         "padding_bottom": 96
       }
     },
+    "why_choose_us": {
+      "type": "why-choose-us",
+      "settings": {
+        "heading": "WAAROM ONDERZOEKERS KIEZEN VOOR PEPTIDESMEESTER",
+        "paragraph_1": "Wij leveren in Europa geproduceerde peptiden met een geverifieerde zuiverheid van ≥99%. Elke batch wordt onafhankelijk getest en wordt geleverd met een Certificaat van Analyse.",
+        "paragraph_2": "Word lid van onze Telegram-community voor exclusieve aanbiedingen, onderzoeksupdates en directe ondersteuning van ons team.",
+        "usp1_title": "Laboratorium Getest",
+        "usp1_text": "Alle producten getest op zuiverheid en kwaliteit",
+        "usp2_title": "Verzending dezelfde dag",
+        "usp2_text": "Snelle levering door heel Europa",
+        "usp3_title": "Gebruiksrichtlijnen",
+        "usp3_text": "Deskundig advies over productbehandeling",
+        "usp4_title": "Klantenservice",
+        "usp4_text": "Toegewijde ondersteuning voor al uw vragen",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -169,6 +187,7 @@
   },
   "order": [
     "peptides_hero",
+    "why_choose_us",
     "rich_text",
     "featured_collection",
     "collage",
