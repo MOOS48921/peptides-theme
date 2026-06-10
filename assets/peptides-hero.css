@@ -9,6 +9,9 @@
   background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
   padding-top: var(--hero-padding-top, 96px);
   padding-bottom: var(--hero-padding-bottom, 96px);
   text-align: center;
@@ -16,12 +19,12 @@
   overflow: hidden;
 }
 
-/* Dark overlay for text readability */
+/* Dark overlay — strong enough to suppress image text */
 .peptides-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.68);
   pointer-events: none;
 }
 
