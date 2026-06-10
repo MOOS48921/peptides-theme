@@ -34,21 +34,32 @@
 
     {%- comment -%} ── Left: product image ─────────────────────────── {%- endcomment -%}
     <div class="peptides-product__media">
-      {%- if product.featured_media -%}
-        <img
-          src="{{ product.featured_media | image_url: width: 800 }}"
-          alt="{{ product.featured_media.alt | escape | default: product.title | escape }}"
-          width="{{ product.featured_media.width }}"
-          height="{{ product.featured_media.height }}"
-          class="peptides-product__image"
-          loading="eager"
-          fetchpriority="high"
-        >
-      {%- else -%}
-        <div class="peptides-product__image-placeholder">
-          {{ 'image' | placeholder_svg_tag }}
-        </div>
-      {%- endif -%}
+      <div class="product-images">
+        {% if product.images.size > 0 %}
+          <div class="product-main-image">
+            <img src="{{ product.featured_image | image_url: width: 800 }}"
+                 alt="{{ product.title }}"
+                 id="main-product-image"
+                 style="width:100%;border-radius:8px;">
+          </div>
+          {% if product.images.size > 1 %}
+          <div class="product-thumbnails" style="display:flex;gap:8px;margin-top:12px;">
+            {% for image in product.images %}
+              <img src="{{ image | image_url: width: 150 }}"
+                   alt="{{ product.title }}"
+                   onclick="document.getElementById('main-product-image').src='{{ image | image_url: width: 800 }}'"
+                   style="width:80px;height:80px;object-fit:cover;border-radius:4px;cursor:pointer;border:2px solid transparent;"
+                   onmouseover="this.style.borderColor='#F5C518'"
+                   onmouseout="this.style.borderColor='transparent'">
+            {% endfor %}
+          </div>
+          {% endif %}
+        {% else %}
+          <div style="background:#1a1a1a;aspect-ratio:1;border-radius:8px;display:flex;align-items:center;justify-content:center;">
+            <span style="color:#666;">Geen afbeelding</span>
+          </div>
+        {% endif %}
+      </div>
     </div>
 
     {%- comment -%} ── Right: product info ─────────────────────────── {%- endcomment -%}
