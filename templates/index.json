@@ -187,11 +187,11 @@
   },
   "order": [
     "peptides_hero",
-    "why_choose_us",
     "rich_text",
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "why_choose_us"
   ]
 }
