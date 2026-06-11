@@ -165,14 +165,25 @@
 }
 
 /* Responsive */
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 768px) {
+  .peptides-hero__btn--primary {
+    display: none;
+  }
+
   .peptides-hero__heading {
-    font-size: clamp(2.4rem, 8vw, 3.6rem);
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .peptides-hero__inner {
+    text-align: left;
+    padding: 0 1.6rem;
   }
 
   .peptides-hero__buttons {
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
   }
 
   .peptides-hero__btn {
