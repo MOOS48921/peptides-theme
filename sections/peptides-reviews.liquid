@@ -1,3 +1,77 @@
+<style>
+.peptides-reviews {
+  background: #111;
+  margin-top: 3.2rem;
+  border-radius: 1rem;
+  padding: 3.2rem 2.4rem;
+}
+
+.peptides-reviews__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 2.4rem;
+  letter-spacing: -0.01em;
+}
+
+@media screen and (min-width: 750px) {
+  .peptides-reviews__title {
+    font-size: 2.4rem;
+  }
+}
+
+.peptides-reviews__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+}
+
+@media screen and (min-width: 750px) {
+  .peptides-reviews__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.peptides-reviews__card {
+  background: #1a1a1a;
+  border-radius: 0.8rem;
+  padding: 2rem;
+  border-top: 2px solid #F5C518;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.peptides-reviews__stars {
+  color: #F5C518;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.peptides-reviews__text {
+  font-size: 1.35rem;
+  line-height: 1.65;
+  color: #e0e0e0;
+  margin: 0;
+  flex: 1;
+}
+
+.peptides-reviews__name {
+  font-size: 1.25rem;
+  color: #888;
+  margin: 0 0 6px;
+  font-style: italic;
+}
+
+.peptides-reviews__badge {
+  font-size: 1.1rem;
+  color: #4caf50;
+  margin: 0;
+  font-weight: 600;
+}
+</style>
+
 <div class="peptides-reviews page-width">
   <h2 class="peptides-reviews__title" style="text-align:center;">Wat onze klanten zeggen</h2>
   <div class="peptides-reviews__grid">
