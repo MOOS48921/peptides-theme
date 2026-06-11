@@ -4,8 +4,8 @@
 {%- if section.settings.hero_image != blank -%}
   {%- assign hero_bg_url = section.settings.hero_image | image_url: width: 2000 -%}
 {%- endif -%}
-<section class="peptides-hero">
-  <div class="peptides-hero__content">
+<section class="peptides-hero" style="--hero-bg-image: url('{{ hero_bg_url }}')">
+  <div class="peptides-hero__inner page-width">
     <div class="peptides-hero__buttons">
       {%- if section.settings.button_secondary_label != blank -%}
         <a
@@ -27,7 +27,6 @@
       {%- endif -%}
     </div>
   </div>
-  <div class="peptides-hero__image" style="background-image: url('{{ hero_bg_url }}')"></div>
 </section>
 
 {% schema %}
