@@ -3,40 +3,38 @@
    ============================================ */
 
 .peptides-hero {
-  background-color: #111;
-  background-image: var(--hero-bg-image);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
-  min-height: 600px;
-  height: 80vh;
-  max-height: 900px;
+  max-height: 600px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.peptides-hero__content {
+  background-color: #111;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  padding: 0;
+  padding: 4rem;
 }
 
-/* Dark overlay — strong enough to suppress image text */
-.peptides-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.10);
-  pointer-events: none;
+.peptides-hero__image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-.peptides-hero__inner {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 6rem 2rem;
+@media screen and (max-width: 749px) {
+  .peptides-hero {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: none;
+  }
+
+  .peptides-hero__image {
+    height: 300px;
+  }
 }
 
 /* Eyebrow line */
