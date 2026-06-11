@@ -3,38 +3,37 @@
    ============================================ */
 
 .peptides-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  background-color: #111;
+  background-image: var(--hero-bg-image);
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
   width: 100%;
-  max-height: 600px;
-  height: 600px;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  padding-top: var(--hero-padding-top, 96px);
+  padding-bottom: var(--hero-padding-bottom, 96px);
+  text-align: center;
+  position: relative;
   overflow: hidden;
 }
 
-.peptides-hero__content {
-  background-color: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem;
+/* Dark overlay — strong enough to suppress image text */
+.peptides-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.10);
+  pointer-events: none;
 }
 
-.peptides-hero__image {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 749px) {
-  .peptides-hero {
-    grid-template-columns: 1fr;
-    height: auto;
-    max-height: none;
-  }
-
-  .peptides-hero__image {
-    height: 300px;
-  }
+.peptides-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 /* Eyebrow line */
