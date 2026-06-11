@@ -6,17 +6,19 @@
   background-color: #111;
   background-image: var(--hero-bg-image);
   background-size: cover;
-  background-position: right center;
+  background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 560px;
+  min-height: 600px;
+  height: 80vh;
+  max-height: 900px;
   display: flex;
   align-items: center;
-  padding-top: var(--hero-padding-top, 96px);
-  padding-bottom: var(--hero-padding-bottom, 96px);
+  justify-content: center;
   text-align: center;
   position: relative;
   overflow: hidden;
+  padding: 0;
 }
 
 /* Dark overlay — strong enough to suppress image text */
@@ -31,9 +33,10 @@
 .peptides-hero__inner {
   position: relative;
   z-index: 1;
+  width: 100%;
   max-width: 860px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 6rem 2rem;
 }
 
 /* Eyebrow line */
