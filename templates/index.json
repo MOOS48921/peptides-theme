@@ -62,6 +62,10 @@
         "padding_bottom": 36
       }
     },
+    "peptides_reviews": {
+      "type": "peptides-reviews",
+      "settings": {}
+    },
     "why_choose_us": {
       "type": "why-choose-us",
       "settings": {
@@ -85,6 +89,7 @@
     "peptides_hero",
     "rich_text",
     "featured_collection",
+    "peptides_reviews",
     "why_choose_us"
   ]
 }
