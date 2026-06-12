@@ -77,103 +77,11 @@
         <span id="PeptidesStockText-{{ section.id }}">Op voorraad</span>
       </div>
 
-      {%- comment -%}
-        ── Hardcoded option button groups ──────────────────────────
-        These always render. JS maps the selection to a variant ID.
-        The data-option-index must match the option position in Shopify
-        (option1 → 0, option2 → 1, etc.) once variants are configured.
-      {%- endcomment -%}
-
-      {%- comment -%} Option 1 – Concentratie {%- endcomment -%}
-      <div class="peptides-variant-group" data-option-index="0">
-        <span class="peptides-variant-group__label">Concentratie (mg)</span>
-        <div class="peptides-variant-group__buttons" role="group" aria-label="Concentratie (mg)">
-          {%- assign concentraties = '10mg,20mg,30mg,40mg,60mg' | split: ',' -%}
-          {%- for val in concentraties -%}
-            <button
-              type="button"
-              class="peptides-option-btn{% if forloop.first %} is-selected{% endif %}"
-              data-option-group="0"
-              data-option-value="{{ val }}"
-              aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
-            >{{ val }}</button>
-          {%- endfor -%}
-        </div>
-      </div>
-
-      {%- comment -%} Option 2 – Bacteriostatisch Water {%- endcomment -%}
-      <div class="peptides-variant-group" data-option-index="1">
-        <span class="peptides-variant-group__label">Bacteriostatisch Water</span>
-        <div class="peptides-variant-group__buttons" role="group" aria-label="Bacteriostatisch Water">
-          <button type="button" class="peptides-option-btn" data-option-group="1" data-option-value="10ml" aria-pressed="false">10ml</button>
-          <button type="button" class="peptides-option-btn is-selected" data-option-group="1" data-option-value="3ml standaard inbegrepen" aria-pressed="true">3ml <span style="font-size:1.1rem;opacity:.75">(standaard inbegrepen)</span></button>
-        </div>
-      </div>
-
-      {%- comment -%} Option 3 – Insulinenaalden {%- endcomment -%}
-      <div class="peptides-variant-group" data-option-index="2">
-        <span class="peptides-variant-group__label">Insulinenaalden</span>
-        <div class="peptides-variant-group__buttons" role="group" aria-label="Insulinenaalden">
-          <button type="button" class="peptides-option-btn" data-option-group="2" data-option-value="10x 1ml insulinenaalden" aria-pressed="false">10× 1ml insulinenaalden</button>
-          <button type="button" class="peptides-option-btn" data-option-group="2" data-option-value="10x 0.5ml insulinenaalden" aria-pressed="false">10× 0,5ml insulinenaalden</button>
-          <button type="button" class="peptides-option-btn is-selected" data-option-group="2" data-option-value="Geen" aria-pressed="true">Geen</button>
-        </div>
-      </div>
-
-      {%- comment -%} Option 4 – Alcohol Swabs {%- endcomment -%}
-      <div class="peptides-variant-group" data-option-index="3">
-        <span class="peptides-variant-group__label">Alcohol Swabs</span>
-        <div class="peptides-variant-group__buttons" role="group" aria-label="Alcohol Swabs">
-          <button type="button" class="peptides-option-btn" data-option-group="3" data-option-value="Ja" aria-pressed="false">Ja</button>
-          <button type="button" class="peptides-option-btn is-selected" data-option-group="3" data-option-value="Nee" aria-pressed="true">Nee</button>
-        </div>
-      </div>
-
       {%- comment -%} Price row {%- endcomment -%}
       <div class="peptides-product__price-row" id="PeptidesPrice-{{ section.id }}" role="status">
         <span class="peptides-product__price-compare" id="PeptidesPriceCompare-{{ section.id }}" hidden></span>
         <span class="peptides-product__price" id="PeptidesPriceAmount-{{ section.id }}">{{ current_variant.price | money }}</span>
       </div>
-
-      {%- comment -%} Add to cart form {%- endcomment -%}
-      <product-form
-        class="product-form"
-        data-hide-errors="false"
-        data-section-id="{{ section.id }}"
-      >
-        {%- form 'product',
-          product,
-          id: product_form_id,
-          class: 'form',
-          novalidate: 'novalidate',
-          data-type: 'add-to-cart-form'
-        -%}
-          <input
-            type="hidden"
-            name="id"
-            value="{{ current_variant.id | default: product.variants.first.id }}"
-            class="product-variant-id"
-            id="PeptidesVariantInput-{{ section.id }}"
-          >
-
-          <button
-            id="ProductSubmitButton-{{ section.id }}"
-            type="submit"
-            name="add"
-            class="peptides-product__add-btn"
-            {% unless btn_available %}disabled{% endunless %}
-          >
-            <span id="PeptidesAddBtnText-{{ section.id }}">
-              {%- if btn_available -%}
-                In winkelwagen
-              {%- else -%}
-                Uitverkocht
-              {%- endif -%}
-            </span>
-            {%- render 'loading-spinner' -%}
-          </button>
-        {%- endform -%}
-      </product-form>
 
       {%- comment -%} ── Trust / payment block ────────────────────── {%- endcomment -%}
       <div class="peptides-trust">
