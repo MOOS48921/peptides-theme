@@ -166,7 +166,7 @@
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  /* Stack hero vertically: text on top, image below */
+  /* Stack vertically: buttons block on top, image below */
   .peptides-hero {
     flex-direction: column;
     align-items: stretch;
@@ -176,25 +176,11 @@
     padding-bottom: 0;
   }
 
-  /* Hide the dark overlay — it covered the background that's now removed */
   .peptides-hero::before {
     display: none;
   }
 
-  /* Image block rendered below the text via ::after pseudo-element */
-  .peptides-hero::after {
-    content: '';
-    display: block;
-    width: 100%;
-    background-image: var(--hero-bg-image);
-    background-size: cover;
-    background-position: center top;
-    /* Approximately 50% of the hero's total height on mobile */
-    height: 44vw;
-    max-height: 260px;
-    flex-shrink: 0;
-  }
-
+  /* Buttons / text block on top */
   .peptides-hero__inner {
     background-color: #111;
     width: 100%;
@@ -202,13 +188,32 @@
     padding: 2.4rem 1.6rem;
     text-align: center;
     overflow: visible;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Hero image block below — 400px tall, covers like object-fit: cover */
+  .peptides-hero::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 400px;
+    background-image: var(--hero-bg-image);
+    background-size: cover;
+    background-position: center center;
+    flex-shrink: 0;
   }
 
   .peptides-hero__heading {
-    font-size: 2.8rem; /* 28px at 10px root */
     font-size: min(2.8rem, 7.5vw);
     word-break: break-word;
     overflow-wrap: break-word;
+    color: #ffffff;
+  }
+
+  /* Hide primary button on mobile */
+  .peptides-hero__btn--primary {
+    display: none !important;
   }
 
   .peptides-hero__buttons {
