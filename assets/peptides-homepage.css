@@ -79,6 +79,17 @@
 }
 
 /* ============================================
+   FEATURED COLLECTION — homepage override
+   ============================================ */
+
+.template-index .featured-collection .product-grid {
+  grid-template-columns: 1fr !important;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================
    GOLD ANNOUNCEMENT BAR
    ============================================ */
 
