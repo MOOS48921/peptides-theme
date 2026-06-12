@@ -132,7 +132,7 @@
       {%- comment -%} Price row {%- endcomment -%}
       <div class="peptides-product__price-row" id="PeptidesPrice-{{ section.id }}" role="status">
         <span class="peptides-product__price-compare" id="PeptidesPriceCompare-{{ section.id }}" hidden></span>
-        <span class="peptides-product__price" id="PeptidesPriceAmount-{{ section.id }}" data-money-format="{{ shop.money_format | escape }}"></span>
+        <span class="peptides-product__price" id="PeptidesPriceAmount-{{ section.id }}">{{ current_variant.price | money }}</span>
       </div>
 
       {%- comment -%} Add to cart form {%- endcomment -%}
@@ -540,6 +540,16 @@
 <script id="PeptidesVariantsData-{{ section.id }}" type="application/json">
   {{ product.variants | json }}
 </script>
+<script id="PeptidesPriceData-{{ section.id }}" type="application/json">
+  {
+    {%- for variant in product.variants -%}
+      "{{ variant.id }}": {
+        "price": {{ variant.price | money | json }},
+        "compare": {% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money | json }}{% else %}null{% endif %}
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  }
+</script>
 
 <script>
 (function () {
@@ -638,14 +648,19 @@
         if (icon) icon.style.background = available ? '#1B6B3A' : '#aaa';
       }
 
-      var fmt = (priceEl && priceEl.dataset.moneyFormat) || '€{{amount_with_comma_separator}}';
-      if (priceEl) priceEl.textContent = formatMoney(variant.price, fmt);
-      if (compareEl) {
-        if (variant.compare_at_price && variant.compare_at_price > variant.price) {
-          compareEl.textContent = formatMoney(variant.compare_at_price, fmt);
-          compareEl.hidden = false;
-        } else {
-          compareEl.hidden = true;
+      var priceDataEl = document.getElementById('PeptidesPriceData-' + SECTION);
+      var priceData = {};
+      try { if (priceDataEl) priceData = JSON.parse(priceDataEl.textContent); } catch (e) {}
+      var pd = priceData[variant.id];
+      if (pd) {
+        if (priceEl) priceEl.textContent = pd.price;
+        if (compareEl) {
+          if (pd.compare) {
+            compareEl.textContent = pd.compare;
+            compareEl.hidden = false;
+          } else {
+            compareEl.hidden = true;
+          }
         }
       }
     } else {
@@ -653,16 +668,6 @@
       if (submitBtn) submitBtn.disabled = true;
       if (btnText)   btnText.textContent = 'Niet beschikbaar';
     }
-  }
-
-  function formatMoney(cents, fmt) {
-    var amount = (cents / 100).toFixed(2);
-    var amountComma = amount.replace('.', ',');
-    return fmt
-      .replace('{{amount}}', amount)
-      .replace('{{amount_no_decimals}}', Math.round(cents / 100))
-      .replace('{{amount_with_comma_separator}}', amountComma)
-      .replace('{{amount_no_decimals_with_comma_separator}}', String(Math.round(cents / 100)));
   }
 
   if (document.readyState === 'loading') {
