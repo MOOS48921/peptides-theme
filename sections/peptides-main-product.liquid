@@ -391,6 +391,200 @@
 </div>
 {%- comment -%} end .peptides-dark-panels {%- endcomment -%}
 
+{%- comment -%} ── Timeline section ─────────────────────────────────────────── {%- endcomment -%}
+<section class="peptides-timeline page-width">
+  <h2 class="peptides-timeline__heading">Wat je kunt verwachten door de weken heen</h2>
+  <div class="peptides-timeline__track">
+    <div class="peptides-timeline__line"></div>
+    <div class="peptides-timeline__steps">
+
+      <div class="peptides-timeline__step">
+        <div class="peptides-timeline__dot"></div>
+        <p class="peptides-timeline__week">WEEK 1–2:</p>
+        <span class="peptides-timeline__badge">Eerste Aanpassing</span>
+        <p class="peptides-timeline__body">Je lichaam begint te reageren. Veel gebruikers merken in de eerste weken al subtiele veranderingen in lichaamsgewicht.</p>
+        <ul class="peptides-timeline__bullets">
+          <li>Eerste gewichtsverlies zichtbaar*</li>
+          <li>Verminderd hongergevoel verdwijnt snel*</li>
+        </ul>
+      </div>
+
+      <div class="peptides-timeline__step">
+        <div class="peptides-timeline__dot"></div>
+        <p class="peptides-timeline__week">WEEK 3–4:</p>
+        <span class="peptides-timeline__badge">Zichtbare Verandering</span>
+        <p class="peptides-timeline__body">De kilo's beginnen er echt af te gaan. Gebruikers rapporteren meetbare veranderingen op de weegschaal.</p>
+        <ul class="peptides-timeline__bullets">
+          <li>2–4 kg gewichtsverlies*</li>
+          <li>Vetverbranding neemt toe*</li>
+        </ul>
+      </div>
+
+      <div class="peptides-timeline__step">
+        <div class="peptides-timeline__dot"></div>
+        <p class="peptides-timeline__week">WEEK 5–8:</p>
+        <span class="peptides-timeline__badge">Aanhoudende Resultaten</span>
+        <p class="peptides-timeline__body">Met consistent gebruik stapelen de resultaten zich op. Duidelijk zichtbaar gewichtsverlies en een slankere lichaamssamenstelling.</p>
+        <ul class="peptides-timeline__bullets">
+          <li>5–8 kg gewichtsverlies*</li>
+          <li>Verbeterde lichaamssamenstelling*</li>
+        </ul>
+      </div>
+
+      <div class="peptides-timeline__step">
+        <div class="peptides-timeline__dot"></div>
+        <p class="peptides-timeline__week">WEEK 9–12+:</p>
+        <span class="peptides-timeline__badge">Langdurige Ondersteuning</span>
+        <p class="peptides-timeline__body">Bij voortgezet gebruik blijven de kilo's eraf gaan als onderdeel van een gezonde levensstijl.</p>
+        <ul class="peptides-timeline__bullets">
+          <li>Aanhoudend gewichtsverlies*</li>
+          <li>Groter gevoel van algeheel welzijn*</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <p class="peptides-timeline__disclaimer">* Individuele resultaten kunnen variëren.</p>
+</section>
+
+<style>
+.peptides-timeline {
+  background: #1a5c2e;
+  padding: 6rem 2rem;
+  margin: 0;
+}
+
+.peptides-timeline__heading {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 4.8rem;
+  font-family: var(--font-heading-family, sans-serif);
+  line-height: 1.2;
+}
+
+.peptides-timeline__track {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.peptides-timeline__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem;
+  position: relative;
+}
+
+.peptides-timeline__line {
+  position: absolute;
+  top: 10px;
+  left: calc(12.5% - 8px);
+  right: calc(12.5% - 8px);
+  height: 2px;
+  background: rgba(255,255,255,0.3);
+  z-index: 0;
+}
+
+.peptides-timeline__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.peptides-timeline__dot {
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 3px;
+  margin-bottom: 0.4rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.peptides-timeline__week {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #a8d5b5;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.peptides-timeline__badge {
+  display: inline-block;
+  background: #ffffff;
+  color: #111111;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  line-height: 1.3;
+  align-self: flex-start;
+}
+
+.peptides-timeline__body {
+  font-size: 1.35rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+}
+
+.peptides-timeline__bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.peptides-timeline__bullets li {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.8);
+  padding-left: 1.8rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.peptides-timeline__bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  background: rgba(255,255,255,0.15);
+}
+
+.peptides-timeline__disclaimer {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.4);
+  margin: 3.2rem 0 0;
+}
+
+@media screen and (max-width: 749px) {
+  .peptides-timeline__steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .peptides-timeline__line {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .peptides-timeline__steps {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
 {%- comment -%} ── Reviews section ──────────────────────────────────────────── {%- endcomment -%}
 <div class="peptides-reviews page-width">
   <h2 class="peptides-reviews__title" style="text-align:center;">Wat onze klanten zeggen</h2>
