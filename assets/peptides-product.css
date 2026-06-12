@@ -584,16 +584,18 @@
    ============================================================ */
 
 .peptides-dark-panels {
-  background: #1a5c2e;
-  color: #e8e8e8;
+  background: #ffffff !important;
+  color: #111111;
   margin-top: 3.2rem;
   border-radius: 1rem;
   overflow: hidden;
+  border: 1px solid #e5e5e5;
 }
 
 /* ---- Accordion base --------------------------------------- */
 .peptides-accordion {
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: 1px solid #e5e5e5;
+  background: #ffffff !important;
 }
 
 .peptides-accordion:last-of-type {
@@ -607,10 +609,10 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1.8rem 2.4rem;
-  background: none;
+  background: #ffffff !important;
   border: none;
   cursor: pointer;
-  color: #fff;
+  color: #111111 !important;
   text-align: left;
 }
 
@@ -618,13 +620,13 @@
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #fff;
+  color: #111111 !important;
 }
 
 .peptides-accordion__caret {
   display: flex;
   align-items: center;
-  color: #aaa;
+  color: #555555;
   flex-shrink: 0;
   transition: transform 0.2s ease;
 }
@@ -634,25 +636,27 @@
 }
 
 .peptides-accordion__body {
-  border-top: 2px solid #ffffff; /* gold bottom border when open */
+  background: #ffffff !important;
+  border-top: 1px solid #e5e5e5;
 }
 
 .peptides-accordion__content {
   padding: 1.6rem 2.4rem 2rem;
   font-size: 1.4rem;
   line-height: 1.7;
-  color: #ccc;
+  color: #333333 !important;
+  background: #ffffff !important;
 }
 
 .peptides-accordion__content.rte p,
 .peptides-accordion__content.rte li {
-  color: #ccc;
+  color: #333333 !important;
 }
 
 /* ---- Shipping bullets ------------------------------------- */
 .peptides-shipping-info {
   padding: 1.4rem 2.4rem;
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .peptides-shipping-info__list {
@@ -669,12 +673,12 @@
   align-items: flex-start;
   gap: 0.9rem;
   font-size: 1.35rem;
-  color: #ccc;
+  color: #333333 !important;
   line-height: 1.5;
 }
 
 .peptides-shipping-info__list li strong {
-  color: #fff;
+  color: #111111 !important;
 }
 
 .peptides-shipping-info__check {
@@ -700,14 +704,14 @@
 
 .peptides-lab__table td {
   padding: 0.9rem 0;
-  border-bottom: 1px solid #2a2a2a;
-  color: #ccc;
+  border-bottom: 1px solid #e5e5e5;
+  color: #333333 !important;
   vertical-align: middle;
 }
 
 .peptides-lab__table td:first-child {
   width: 40%;
-  color: #888;
+  color: #555555 !important;
   font-size: 1.25rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -761,7 +765,7 @@
   align-items: flex-start;
   gap: 1rem;
   font-size: 1.35rem;
-  color: #ccc;
+  color: #333333 !important;
   line-height: 1.55;
 }
 
@@ -769,7 +773,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #1a5c2e;
   flex-shrink: 0;
   margin-top: 0.15rem;
 }
@@ -779,7 +783,7 @@
   padding: 2rem 2.4rem;
   display: flex;
   justify-content: center;
-  border-top: 1px solid #2a2a2a;
+  border-top: 1px solid #e5e5e5;
 }
 
 .peptides-back-btn {
@@ -788,8 +792,9 @@
   padding: 1rem 2.8rem;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #121212;
-  background: #ffffff;
+  color: #111111 !important;
+  background: #ffffff !important;
+  border: 1px solid #111111;
   border-radius: 10rem;
   text-decoration: none;
   transition: background 0.15s ease, transform 0.1s ease;
@@ -797,7 +802,7 @@
 }
 
 .peptides-back-btn:hover {
-  background: #ffd94a;
+  background: #f5f5f5 !important;
   transform: translateY(-1px);
 }
 
@@ -821,11 +826,11 @@
   }
 }
 
-/* ---- Description HTML (rte) inside dark accordion -------- */
+/* ---- Description HTML (rte) inside accordion -------- */
 .peptides-dark-panels .peptides-accordion__content.rte h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: #111111 !important;
   margin: 1.6rem 0 0.8rem;
   letter-spacing: 0.02em;
 }
@@ -835,7 +840,7 @@
 }
 
 .peptides-dark-panels .peptides-accordion__content.rte p {
-  color: #ccc;
+  color: #333333 !important;
   margin-bottom: 1rem;
 }
 
@@ -852,7 +857,7 @@
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-  color: #ccc;
+  color: #333333 !important;
 }
 
 .peptides-dark-panels .peptides-accordion__content.rte ul li::before {
@@ -861,7 +866,7 @@
   width: 1.6rem;
   height: 1.6rem;
   min-width: 1.6rem;
-  background: #1B6B3A;
+  background: #1a5c2e;
   border-radius: 50%;
   background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='1,4 4,7 9,1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -884,9 +889,9 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #888;
+  color: #555555 !important;
   padding: 0.5rem 1rem 0.7rem 0;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .peptides-dark-panels .peptides-accordion__content.rte table thead th:last-child {
@@ -895,14 +900,14 @@
 
 .peptides-dark-panels .peptides-accordion__content.rte table tbody td {
   padding: 0.9rem 1rem 0.9rem 0;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #e5e5e5;
   vertical-align: top;
-  color: #ccc;
+  color: #333333 !important;
   line-height: 1.5;
 }
 
 .peptides-dark-panels .peptides-accordion__content.rte table tbody td:first-child {
-  color: #888;
+  color: #555555 !important;
   font-size: 1.25rem;
   font-weight: 500;
   white-space: nowrap;
@@ -911,7 +916,7 @@
 }
 
 .peptides-dark-panels .peptides-accordion__content.rte table tbody td:last-child {
-  color: #e0e0e0;
+  color: #111111 !important;
   font-weight: 500;
 }
 
