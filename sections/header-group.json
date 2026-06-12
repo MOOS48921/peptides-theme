@@ -2,13 +2,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "peptides-announcement": {
-      "type": "peptides-announcement-bar",
-      "settings": {
-        "text": "🇧🇪 Gratis verzending boven €250",
-        "link": ""
-      }
-    },
     "header": {
       "type": "header",
       "settings": {
@@ -28,7 +21,6 @@
     }
   },
   "order": [
-    "peptides-announcement",
     "header"
   ]
 }
