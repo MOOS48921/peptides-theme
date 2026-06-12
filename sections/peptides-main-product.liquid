@@ -131,20 +131,8 @@
 
       {%- comment -%} Price row {%- endcomment -%}
       <div class="peptides-product__price-row" id="PeptidesPrice-{{ section.id }}" role="status">
-        {%- if current_variant.compare_at_price > current_variant.price -%}
-          <span class="peptides-product__price-compare" id="PeptidesPriceCompare-{{ section.id }}">
-            {{ current_variant.compare_at_price | money }}
-          </span>
-        {%- else -%}
-          <span class="peptides-product__price-compare" id="PeptidesPriceCompare-{{ section.id }}" hidden></span>
-        {%- endif -%}
-        <span class="peptides-product__price" id="PeptidesPriceAmount-{{ section.id }}">
-          {%- if current_variant.price -%}
-            {{ current_variant.price | money }}
-          {%- elsif product.price_min -%}
-            {{ product.price_min | money }}
-          {%- endif -%}
-        </span>
+        <span class="peptides-product__price-compare" id="PeptidesPriceCompare-{{ section.id }}" hidden></span>
+        <span class="peptides-product__price" id="PeptidesPriceAmount-{{ section.id }}"></span>
       </div>
 
       {%- comment -%} Add to cart form {%- endcomment -%}
