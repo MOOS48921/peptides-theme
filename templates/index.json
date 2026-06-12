@@ -66,6 +66,12 @@
       "type": "peptides-reviews",
       "settings": {}
     },
+    "guarantee": {
+      "type": "guarantee",
+      "settings": {
+        "button_link": "/collections/all"
+      }
+    },
     "why_choose_us": {
       "type": "why-choose-us",
       "settings": {
@@ -90,6 +96,7 @@
     "rich_text",
     "featured_collection",
     "peptides_reviews",
-    "why_choose_us"
+    "why_choose_us",
+    "guarantee"
   ]
 }
