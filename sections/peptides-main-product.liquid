@@ -692,6 +692,154 @@
   </div>
 </div>
 
+{%- comment -%} ── FAQ section ──────────────────────────────────────────────── {%- endcomment -%}
+<section class="peptides-faq page-width">
+  <h2 class="peptides-faq__heading">Veelgestelde Vragen</h2>
+  <div class="peptides-faq__list">
+
+    <div class="peptides-faq__item">
+      <button class="peptides-faq__trigger" aria-expanded="false">
+        <span>Is Retatrutide (GLP-3) gevaarlijk?</span>
+        <svg class="peptides-faq__caret" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="peptides-faq__body" hidden>
+        <p>Uit onderzoek is gebleken dat Retatrutide (GLP-3) veilig is wanneer het correct wordt gebruikt. Al onze producten beschikken over de juiste certificaten en zijn onafhankelijk getest op een zuiverheid van ≥99%. Wij zouden dit product simpelweg niet verkopen als we er niet volledig achter stonden. Je kunt de labresultaten van elke batch terugvinden op de productpagina.</p>
+      </div>
+    </div>
+
+    <div class="peptides-faq__item">
+      <button class="peptides-faq__trigger" aria-expanded="false">
+        <span>Hoe snel zie ik resultaten?</span>
+        <svg class="peptides-faq__caret" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="peptides-faq__body" hidden>
+        <p>De meeste gebruikers rapporteren eerste veranderingen binnen 1-2 weken. Significante resultaten worden doorgaans gemeld tussen week 3 en 8, afhankelijk van dosering en individuele factoren.</p>
+      </div>
+    </div>
+
+    <div class="peptides-faq__item">
+      <button class="peptides-faq__trigger" aria-expanded="false">
+        <span>Hoe wordt het geleverd?</span>
+        <svg class="peptides-faq__caret" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="peptides-faq__body" hidden>
+        <p>Alle bestellingen worden discreet verpakt en verstuurd binnen 1-2 werkdagen. Je ontvangt een track &amp; trace code zodra je pakket onderweg is.</p>
+      </div>
+    </div>
+
+    <div class="peptides-faq__item">
+      <button class="peptides-faq__trigger" aria-expanded="false">
+        <span>Wat is de kwaliteit van jullie peptiden?</span>
+        <svg class="peptides-faq__caret" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="peptides-faq__body" hidden>
+        <p>Al onze peptiden worden geproduceerd in Europa en getest door onafhankelijke laboratoria op een zuiverheid van ≥99%. Elk product wordt geleverd met een Certificaat van Analyse.</p>
+      </div>
+    </div>
+
+    <div class="peptides-faq__item">
+      <button class="peptides-faq__trigger" aria-expanded="false">
+        <span>Kan ik meerdere peptiden combineren?</span>
+        <svg class="peptides-faq__caret" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="peptides-faq__body" hidden>
+        <p>Veel onderzoekers combineren verschillende peptiden. Wij adviseren echter altijd om dit te doen op basis van gedegen onderzoek en onder begeleiding van een gekwalificeerde professional.</p>
+      </div>
+    </div>
+
+    <div class="peptides-faq__item">
+      <button class="peptides-faq__trigger" aria-expanded="false">
+        <span>Wat als ik niet tevreden ben met mijn bestelling?</span>
+        <svg class="peptides-faq__caret" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="peptides-faq__body" hidden>
+        <p>We bieden een 90-dagen geld-terug-garantie. Ben je niet tevreden? Neem dan contact met ons op via onze klantenservice en we lossen het op — geen vragen gesteld.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.peptides-faq {
+  background: #ffffff;
+  padding: 6rem 2rem;
+}
+
+.peptides-faq__heading {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  color: #111111;
+  text-align: center;
+  margin: 0 0 3.2rem;
+  font-family: var(--font-heading-family, sans-serif);
+}
+
+.peptides-faq__list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.peptides-faq__item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.peptides-faq__item:first-child {
+  border-top: 1px solid #e5e5e5;
+}
+
+.peptides-faq__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  padding: 1.8rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111111;
+  font-family: inherit;
+}
+
+.peptides-faq__caret {
+  flex-shrink: 0;
+  color: #555555;
+  transition: transform 0.2s ease;
+}
+
+.peptides-faq__trigger[aria-expanded="true"] .peptides-faq__caret {
+  transform: rotate(180deg);
+}
+
+.peptides-faq__body {
+  padding: 0 0 1.8rem;
+}
+
+.peptides-faq__body p {
+  font-size: 1.45rem;
+  line-height: 1.75;
+  color: #444444;
+  margin: 0;
+}
+</style>
+
+<script>
+document.querySelectorAll('.peptides-faq__trigger').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    var body = this.nextElementSibling;
+    this.setAttribute('aria-expanded', !expanded);
+    if (expanded) { body.hidden = true; } else { body.hidden = false; }
+  });
+});
+</script>
+
 {%- comment -%} Embed full variants data for JS lookup {%- endcomment -%}
 <script id="PeptidesVariantsData-{{ section.id }}" type="application/json">
   {{ product.variants | json }}
