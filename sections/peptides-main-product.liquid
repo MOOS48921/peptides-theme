@@ -132,7 +132,7 @@
       {%- comment -%} Price row {%- endcomment -%}
       <div class="peptides-product__price-row" id="PeptidesPrice-{{ section.id }}" role="status">
         <span class="peptides-product__price-compare" id="PeptidesPriceCompare-{{ section.id }}" hidden></span>
-        <span class="peptides-product__price" id="PeptidesPriceAmount-{{ section.id }}"></span>
+        <span class="peptides-product__price" id="PeptidesPriceAmount-{{ section.id }}" data-money-format="{{ shop.money_format | escape }}"></span>
       </div>
 
       {%- comment -%} Add to cart form {%- endcomment -%}
@@ -638,7 +638,7 @@
         if (icon) icon.style.background = available ? '#1B6B3A' : '#aaa';
       }
 
-      var fmt = (window.Shopify && window.Shopify.money_format) || '€{{amount}}';
+      var fmt = (priceEl && priceEl.dataset.moneyFormat) || '€{{amount_with_comma_separator}}';
       if (priceEl) priceEl.textContent = formatMoney(variant.price, fmt);
       if (compareEl) {
         if (variant.compare_at_price && variant.compare_at_price > variant.price) {
