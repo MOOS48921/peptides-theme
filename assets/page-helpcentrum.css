@@ -3,11 +3,11 @@
    ============================================ */
 
 body, #MainContent, main#MainContent {
-  background-color: #111 !important;
+  background-color: #1a5c2e !important;
 }
 
 .help-page {
-  background-color: #111 !important;
+  background-color: #1a5c2e !important;
   min-height: 60vh;
   padding: 64px 2rem 96px;
   color: #ffffff;
@@ -49,7 +49,7 @@ body, #MainContent, main#MainContent {
 .help-section__heading {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #F5C518 !important;
+  color: #ffffff !important;
   margin: 0 0 2rem;
   display: flex;
   align-items: center;
@@ -73,8 +73,8 @@ body, #MainContent, main#MainContent {
 
 /* ── Individual accordion card ── */
 .help-accordion {
-  background: #1a1a1a !important;
-  border: 1px solid #2a2a2a;
+  background: #1f6b35 !important;
+  border: 1px solid #1f6b35;
   border-radius: 8px;
   overflow: hidden;
   transition: border-color 0.2s ease;
@@ -82,10 +82,10 @@ body, #MainContent, main#MainContent {
 
 .help-accordion--open {
   border-color: transparent;
-  border-left: 3px solid #F5C518;
-  border-top: 1px solid #2a2a2a;
-  border-right: 1px solid #2a2a2a;
-  border-bottom: 1px solid #2a2a2a;
+  border-left: 3px solid #ffffff;
+  border-top: 1px solid #1f6b35;
+  border-right: 1px solid #1f6b35;
+  border-bottom: 1px solid #1f6b35;
 }
 
 /* ── Trigger button ── */
@@ -113,7 +113,7 @@ body, #MainContent, main#MainContent {
 .help-accordion__question {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #F5C518 !important;
+  color: #ffffff !important;
   line-height: 1.4;
   flex: 1;
   transition: color 0.2s;
@@ -124,7 +124,7 @@ body, #MainContent, main#MainContent {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #F5C518;
+  color: #ffffff;
   flex-shrink: 0;
   transition: transform 0.25s ease;
 }
@@ -169,9 +169,9 @@ body, #MainContent, main#MainContent {
 
 /* ── Links inside answers ── */
 .help-accordion__link {
-  color: #F5C518 !important;
+  color: #ffffff !important;
   text-decoration: none;
-  border-bottom: 1px solid rgba(245, 197, 24, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
   padding-bottom: 1px;
   transition: border-color 0.2s, color 0.2s;
 }

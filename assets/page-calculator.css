@@ -4,15 +4,15 @@
    ============================================ */
 
 /* ── Force dark at every level ── */
-body { background-color: #111 !important; }
+body { background-color: #1a5c2e !important; }
 
 #MainContent,
 main#MainContent,
-.main-content { background-color: #111 !important; }
+.main-content { background-color: #1a5c2e !important; }
 
 /* ── Page wrapper ── */
 .calc-page {
-  background-color: #111 !important;
+  background-color: #1a5c2e !important;
   min-height: 60vh;
   padding: 64px 2rem 96px;
   color: #ffffff;
@@ -70,7 +70,7 @@ main#MainContent,
 }
 
 .calc-syringe-card {
-  background: #1a1a1a !important;
+  background: #1f6b35 !important;
   border: 2px solid #333 !important;
   border-radius: 12px;
   padding: 2.4rem 1rem 1.8rem;
@@ -86,14 +86,14 @@ main#MainContent,
 }
 
 .calc-syringe-card:hover {
-  border-color: rgba(245, 197, 24, 0.4) !important;
-  background: #1f1f1f !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  background: #1f6b35 !important;
   transform: translateY(-2px);
 }
 
 .calc-syringe-card--selected {
-  border-color: #F5C518 !important;
-  background: #1f1a00 !important;
+  border-color: #ffffff !important;
+  background: #0f4020 !important;
 }
 
 .calc-syringe-card__img {
@@ -150,7 +150,7 @@ main#MainContent,
 }
 
 .calc-btn {
-  background: #1a1a1a !important;
+  background: #1f6b35 !important;
   border: 2px solid #333 !important;
   border-radius: 8px;
   color: rgba(255, 255, 255, 0.8) !important;
@@ -167,15 +167,15 @@ main#MainContent,
 }
 
 .calc-btn:hover {
-  border-color: rgba(245, 197, 24, 0.45) !important;
-  background: #222 !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  background: #1f6b35 !important;
   color: #ffffff !important;
 }
 
 .calc-btn--selected {
-  border-color: #F5C518 !important;
-  background: #1f1a00 !important;
-  color: #F5C518 !important;
+  border-color: #ffffff !important;
+  background: #0f4020 !important;
+  color: #ffffff !important;
 }
 
 /* ── Custom / Overig input ── */
@@ -184,8 +184,8 @@ main#MainContent,
 }
 
 .calc-input {
-  background: #1a1a1a !important;
-  border: 2px solid #F5C518 !important;
+  background: #1f6b35 !important;
+  border: 2px solid #ffffff !important;
   border-radius: 8px;
   color: #ffffff !important;
   font-size: 1.5rem;
@@ -200,7 +200,7 @@ main#MainContent,
 }
 
 .calc-input:focus {
-  box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
 .calc-input::placeholder {
@@ -212,8 +212,8 @@ main#MainContent,
    ==================================== */
 
 .calc-result {
-  background: #1a1a1a !important;
-  border: 1px solid rgba(245, 197, 24, 0.22);
+  background: #1f6b35 !important;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 12px;
   padding: 3.6rem 4rem;
   text-align: center;
@@ -228,7 +228,7 @@ main#MainContent,
 }
 
 .calc-result__value {
-  color: #F5C518 !important;
+  color: #ffffff !important;
   font-weight: 800;
 }
 

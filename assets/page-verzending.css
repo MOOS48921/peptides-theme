@@ -3,7 +3,7 @@
    ============================================ */
 
 .verzending-page {
-  background-color: #111;
+  background-color: #1a5c2e;
   min-height: 60vh;
   padding: 60px 2rem 80px;
   color: #ffffff;
@@ -14,7 +14,7 @@
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #F5C518;
+  color: #ffffff;
   margin: 0 0 4rem;
   font-family: var(--font-heading-family, sans-serif);
 }
@@ -24,7 +24,7 @@
   overflow-x: auto;
   margin-bottom: 5.6rem;
   border-radius: 8px;
-  border: 1px solid rgba(245, 197, 24, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .verzending-table {
@@ -35,7 +35,7 @@
 }
 
 .verzending-table thead tr {
-  background-color: rgba(245, 197, 24, 0.08);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .verzending-table th {
@@ -45,8 +45,8 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #F5C518;
-  border-bottom: 1px solid rgba(245, 197, 24, 0.2);
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .verzending-table td {
@@ -76,7 +76,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #F5C518;
+  color: #ffffff;
   margin: 0 0 1rem;
   font-family: var(--font-heading-family, sans-serif);
 }

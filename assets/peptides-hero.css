@@ -3,7 +3,7 @@
    ============================================ */
 
 .peptides-hero {
-  background-color: #111;
+  background-color: #1a5c2e;
   background-image: var(--hero-bg-image);
   background-size: cover;
   background-position: right center;
@@ -63,7 +63,7 @@
 .peptides-hero__divider {
   width: 80px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #F5C518 20%, #F5C518 80%, transparent);
+  background: linear-gradient(90deg, transparent, #ffffff 20%, #ffffff 80%, transparent);
   margin: 0 auto 3.6rem;
   border-radius: 2px;
 }
@@ -96,20 +96,20 @@
 
 /* Primary: gold filled */
 .peptides-hero__btn--primary {
-  background-color: #F5C518;
-  color: #111;
-  border: 2px solid #F5C518;
+  background-color: #ffffff;
+  color: #1a5c2e;
+  border: 2px solid #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   padding: 1.4rem 3.6rem;
 }
 
 .peptides-hero__btn--primary:hover {
-  background-color: #e0b310;
-  border-color: #e0b310;
-  color: #111;
+  background-color: #cccccc;
+  border-color: #cccccc;
+  color: #1a5c2e;
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(245, 197, 24, 0.35);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.35);
 }
 
 /* Secondary: dark outline with Telegram icon + subtext */
@@ -124,13 +124,13 @@
 }
 
 .peptides-hero__btn--secondary:hover {
-  border-color: #F5C518;
-  color: #F5C518;
+  border-color: #ffffff;
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
 .peptides-hero__btn--secondary:hover .peptides-hero__btn-icon svg {
-  fill: #F5C518;
+  fill: #ffffff;
 }
 
 .peptides-hero__btn-icon {
@@ -182,7 +182,7 @@
 
   /* Buttons / text block on top */
   .peptides-hero__inner {
-    background-color: #111;
+    background-color: #1a5c2e;
     width: 100%;
     box-sizing: border-box;
     padding: 2.4rem 1.6rem;

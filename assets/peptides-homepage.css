@@ -5,12 +5,12 @@
 
 /* Dark header override */
 .section-header .header-wrapper {
-  background-color: #111 !important;
-  border-bottom: 1px solid rgba(245, 197, 24, 0.2) !important;
+  background-color: #1a5c2e !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 .section-header .header {
-  background-color: #111 !important;
+  background-color: #1a5c2e !important;
 }
 
 .section-header .header__heading-link,
@@ -34,7 +34,7 @@
 }
 
 .header__text-logo .logo-meester {
-  color: #F5C518;
+  color: #ffffff;
 }
 
 /* Nav links white on dark */
@@ -45,7 +45,7 @@
 
 .section-header .list-menu__item--link:hover,
 .section-header .header__menu-item:hover {
-  color: #F5C518 !important;
+  color: #ffffff !important;
 }
 
 /* Header icons white */
@@ -56,14 +56,14 @@
 }
 
 .section-header .header__icon:hover svg {
-  color: #F5C518 !important;
-  fill: #F5C518 !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
 }
 
 /* Cart bubble */
 .section-header .cart-count-bubble {
-  background-color: #F5C518 !important;
-  color: #111 !important;
+  background-color: #ffffff !important;
+  color: #1a5c2e !important;
 }
 
 /* Country/language selector */
@@ -83,8 +83,8 @@
    ============================================ */
 
 .peptides-announcement-bar {
-  background-color: #F5C518;
-  color: #111;
+  background-color: #1a5c2e;
+  color: #ffffff;
   text-align: center;
   padding: 10px 16px;
   font-size: 1.4rem;
@@ -93,7 +93,7 @@
 }
 
 .peptides-announcement-bar a {
-  color: #111;
+  color: #ffffff;
   text-decoration: none;
 }
 

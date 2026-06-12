@@ -3,11 +3,11 @@
    ============================================ */
 
 body, #MainContent, main#MainContent {
-  background-color: #111 !important;
+  background-color: #1a5c2e !important;
 }
 
 .policy-page {
-  background-color: #111 !important;
+  background-color: #1a5c2e !important;
   min-height: 60vh;
   padding: 64px 2rem 96px;
   color: #ffffff;
@@ -41,7 +41,7 @@ body, #MainContent, main#MainContent {
   color: rgba(255, 255, 255, 0.75) !important;
   margin: 0 0 5.6rem;
   padding-bottom: 3.2rem;
-  border-bottom: 1px solid rgba(245, 197, 24, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* ── Sections ── */
@@ -64,7 +64,7 @@ body, #MainContent, main#MainContent {
 .policy-section__heading {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #F5C518 !important;
+  color: #ffffff !important;
   margin: 0 0 1.2rem;
   font-family: var(--font-heading-family, sans-serif);
   letter-spacing: 0.03em;
@@ -78,9 +78,9 @@ body, #MainContent, main#MainContent {
 }
 
 .policy-section__text a {
-  color: #F5C518 !important;
+  color: #ffffff !important;
   text-decoration: none;
-  border-bottom: 1px solid rgba(245, 197, 24, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
   padding-bottom: 1px;
   transition: color 0.2s, border-color 0.2s;
 }

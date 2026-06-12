@@ -151,8 +151,8 @@
 /* --- Selected state: yellow/gold --------------------------- */
 .peptides-option-btn.is-selected,
 .peptides-option-btn[aria-pressed="true"] {
-  background: #F5C518;
-  border-color: #F5C518;
+  background: #ffffff;
+  border-color: #ffffff;
   color: #121212;
   font-weight: 600;
 }
@@ -347,7 +347,7 @@
 .peptides-delivery__headline {
   font-size: 1.35rem;
   font-weight: 700;
-  color: #F5C518;
+  color: #ffffff;
   margin: 0 0 0.3rem;
   line-height: 1.3;
 }
@@ -406,12 +406,12 @@
 
 /* Active (gold) step */
 .peptides-delivery__step--active .peptides-delivery__step-icon {
-  background: #F5C518;
+  background: #ffffff;
   color: #121212;
 }
 
 .peptides-delivery__step--active .peptides-delivery__step-line {
-  background: linear-gradient(to right, #F5C518 0%, #d0d0d0 100%);
+  background: linear-gradient(to right, #ffffff 0%, #d0d0d0 100%);
 }
 
 .peptides-delivery__step-label {
@@ -422,7 +422,7 @@
 }
 
 .peptides-delivery__step--active .peptides-delivery__step-label {
-  color: #F5C518;
+  color: #ffffff;
 }
 
 .peptides-delivery__step-date {
@@ -584,7 +584,7 @@
    ============================================================ */
 
 .peptides-dark-panels {
-  background: #111;
+  background: #1a5c2e;
   color: #e8e8e8;
   margin-top: 3.2rem;
   border-radius: 1rem;
@@ -634,7 +634,7 @@
 }
 
 .peptides-accordion__body {
-  border-top: 2px solid #F5C518; /* gold bottom border when open */
+  border-top: 2px solid #ffffff; /* gold bottom border when open */
 }
 
 .peptides-accordion__content {
@@ -714,12 +714,12 @@
 }
 
 .peptides-lab__value {
-  color: #F5C518 !important;
+  color: #ffffff !important;
   font-weight: 600;
 }
 
 .peptides-lab__link {
-  color: #F5C518;
+  color: #ffffff;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 0.2em;
@@ -734,9 +734,9 @@
   display: inline-block;
   font-size: 1.35rem;
   font-weight: 600;
-  color: #F5C518;
+  color: #ffffff;
   text-decoration: none;
-  border-bottom: 1px solid rgba(245, 197, 24, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
   padding-bottom: 0.1rem;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
@@ -769,7 +769,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #F5C518;
+  color: #ffffff;
   flex-shrink: 0;
   margin-top: 0.15rem;
 }
@@ -789,7 +789,7 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: #121212;
-  background: #F5C518;
+  background: #ffffff;
   border-radius: 10rem;
   text-decoration: none;
   transition: background 0.15s ease, transform 0.1s ease;
@@ -949,7 +949,7 @@
    ============================================================ */
 
 .peptides-reviews {
-  background: #111;
+  background: #1a5c2e;
   margin-top: 3.2rem;
   border-radius: 1rem;
   padding: 3.2rem 2.4rem;
@@ -985,14 +985,14 @@
   background: #1a1a1a;
   border-radius: 0.8rem;
   padding: 2rem;
-  border-top: 2px solid #F5C518;
+  border-top: 2px solid #ffffff;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
 .peptides-reviews__stars {
-  color: #F5C518;
+  color: #ffffff;
   font-size: 1.6rem;
   letter-spacing: 0.1em;
   line-height: 1;
