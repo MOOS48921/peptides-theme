@@ -482,6 +482,103 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  /* Prevent any horizontal overflow on the whole section */
+  .peptides-product {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    overflow-x: hidden;
+  }
+
+  /* Remove excess whitespace above the image */
+  .peptides-product__media {
+    position: static;
+    margin: 0;
+    padding: 0;
+  }
+
+  .product-images {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Image: start directly below header, max 380px, contain */
+  .product-main-image {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+  }
+
+  .product-main-image img,
+  #main-product-image {
+    display: block;
+    width: 100% !important;
+    max-height: 380px !important;
+    object-fit: contain !important;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+
+  /* Thumbnails stay within screen */
+  .product-thumbnails {
+    flex-wrap: wrap;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Variant button groups: wrap properly, no overflow */
+  .peptides-variant-group {
+    max-width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .peptides-variant-group__buttons {
+    flex-wrap: wrap;
+    max-width: 100%;
+    overflow: visible;
+    gap: 0.6rem;
+  }
+
+  .peptides-option-btn {
+    white-space: normal;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 1;
+    word-break: break-word;
+  }
+
+  /* Price: always visible, no clipping */
+  .peptides-product__price-row {
+    overflow: visible;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .peptides-product__price,
+  .peptides-product__price-compare {
+    overflow: visible;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  /* Info column fits within screen */
+  .peptides-product__info {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  /* Trust / payment icons wrap on small screens */
+  .peptides-trust__payment-icons,
+  .payment-icons {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+}
+
 /* ============================================================
    Dark info panels (full-width, below two-column grid)
    ============================================================ */
