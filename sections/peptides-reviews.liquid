@@ -1,17 +1,15 @@
 <style>
 .peptides-reviews {
   background: #ffffff !important;
-  margin-top: 3.2rem;
-  border-radius: 1rem;
-  padding: 3.2rem 2.4rem;
+  padding: 6rem 0;
 }
 
 .peptides-reviews__title {
   font-size: 2rem;
   font-weight: 700;
   color: #111111 !important;
-  margin: 0 0 2.4rem;
-  letter-spacing: -0.01em;
+  margin: 0 0 3.2rem;
+  text-align: center;
 }
 
 @media screen and (min-width: 750px) {
@@ -23,7 +21,7 @@
 .peptides-reviews__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.6rem;
+  gap: 2rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -34,91 +32,200 @@
 
 .peptides-reviews__card {
   background: #ffffff !important;
-  border-radius: 8px !important;
-  padding: 24px !important;
   border: 1px solid #e5e5e5 !important;
+  border-radius: 12px !important;
+  padding: 28px !important;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06) !important;
+}
+
+.peptides-reviews__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.peptides-reviews__rating-score {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111111;
 }
 
 .peptides-reviews__stars {
   color: #F5C518 !important;
-  font-size: 1.6rem;
-  letter-spacing: 0.1em;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
   line-height: 1;
+}
+
+.peptides-reviews__card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111111 !important;
+  margin: 0;
+  line-height: 1.3;
 }
 
 .peptides-reviews__text {
   font-size: 14px !important;
   line-height: 1.65;
-  color: #333333 !important;
+  color: #444444 !important;
   margin: 0;
   flex: 1;
 }
 
+.peptides-reviews__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.4rem;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1.2rem;
+}
+
 .peptides-reviews__name {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #111111 !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  margin: 0 0 6px;
-  font-style: normal;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.04em;
 }
 
 .peptides-reviews__badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.1rem;
   color: #1a5c2e !important;
-  margin: 0;
   font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.peptides-reviews__badge-icon {
+  width: 16px;
+  height: 16px;
+  background: #1a5c2e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.peptides-reviews__badge-icon svg {
+  width: 9px;
+  height: 9px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 </style>
 
 <div class="peptides-reviews page-width">
-  <h2 class="peptides-reviews__title" style="text-align:center;">Wat onze klanten zeggen</h2>
+  <h2 class="peptides-reviews__title">Wat onze klanten zeggen</h2>
   <div class="peptides-reviews__grid">
 
     <div class="peptides-reviews__card">
-      <div class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</div>
-      <p class="peptides-reviews__text">"Na jaren worstelen met mijn gewicht besloot ik het anders aan te pakken. Binnen 8 weken was ik 6 kilo kwijt zonder mezelf uit te hongeren. Ik voel me energieker dan ooit en mijn eetlust is eindelijk onder controle. Had dit veel eerder moeten proberen."</p>
-      <p class="peptides-reviews__name">— Linda V., 43 jaar</p>
-      <p class="peptides-reviews__badge">&#10003; Geverifieerde koper</p>
+      <div class="peptides-reviews__rating">
+        <span class="peptides-reviews__rating-score">5.0</span>
+        <span class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</span>
+      </div>
+      <p class="peptides-reviews__card-title">8 kilo kwijt in 8 weken</p>
+      <p class="peptides-reviews__text">Na jaren worstelen met mijn gewicht besloot ik het anders aan te pakken. Binnen 8 weken was ik 6 kilo kwijt zonder mezelf uit te hongeren. Ik voel me energieker dan ooit en mijn eetlust is eindelijk onder controle. Had dit veel eerder moeten proberen.</p>
+      <div class="peptides-reviews__footer">
+        <p class="peptides-reviews__name">Linda V.</p>
+        <p class="peptides-reviews__badge">
+          <span class="peptides-reviews__badge-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Geverifieerde koper
+        </p>
+      </div>
     </div>
 
     <div class="peptides-reviews__card">
-      <div class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</div>
-      <p class="peptides-reviews__text">"Mijn broek zit na 10 weken twee maten kleiner. Ik was sceptisch maar de resultaten spreken voor zich. Gecombineerd met wat meer bewegen ben ik 9 kilo afgevallen. De levering was supersnel en discreet verpakt, precies wat ik nodig had."</p>
-      <p class="peptides-reviews__name">— Mark de B., 38 jaar</p>
-      <p class="peptides-reviews__badge">&#10003; Geverifieerde koper</p>
+      <div class="peptides-reviews__rating">
+        <span class="peptides-reviews__rating-score">5.0</span>
+        <span class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</span>
+      </div>
+      <p class="peptides-reviews__card-title">Twee maten kleiner na 10 weken</p>
+      <p class="peptides-reviews__text">Mijn broek zit na 10 weken twee maten kleiner. Ik was sceptisch maar de resultaten spreken voor zich. Gecombineerd met wat meer bewegen ben ik 9 kilo afgevallen. De levering was supersnel en discreet verpakt, precies wat ik nodig had.</p>
+      <div class="peptides-reviews__footer">
+        <p class="peptides-reviews__name">Mark de B.</p>
+        <p class="peptides-reviews__badge">
+          <span class="peptides-reviews__badge-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Geverifieerde koper
+        </p>
+      </div>
     </div>
 
     <div class="peptides-reviews__card">
-      <div class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</div>
-      <p class="peptides-reviews__text">"Na mijn zwangerschap lukte het maar niet om mijn gewicht kwijt te raken. Een vriendin tipt mij dit en ik ben zo blij dat ik het geprobeerd heb. Min 7 kilo in 9 weken. Ik voel me weer mezelf. De klantenservice was ook top — snel antwoord op al mijn vragen."</p>
-      <p class="peptides-reviews__name">— Sophie M., 31 jaar</p>
-      <p class="peptides-reviews__badge">&#10003; Geverifieerde koper</p>
+      <div class="peptides-reviews__rating">
+        <span class="peptides-reviews__rating-score">5.0</span>
+        <span class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</span>
+      </div>
+      <p class="peptides-reviews__card-title">Ik voel me weer mezelf</p>
+      <p class="peptides-reviews__text">Na mijn zwangerschap lukte het maar niet om mijn gewicht kwijt te raken. Een vriendin tipt mij dit en ik ben zo blij dat ik het geprobeerd heb. Min 7 kilo in 9 weken. De klantenservice was ook top — snel antwoord op al mijn vragen.</p>
+      <div class="peptides-reviews__footer">
+        <p class="peptides-reviews__name">Sophie M.</p>
+        <p class="peptides-reviews__badge">
+          <span class="peptides-reviews__badge-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Geverifieerde koper
+        </p>
+      </div>
     </div>
 
     <div class="peptides-reviews__card">
-      <div class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</div>
-      <p class="peptides-reviews__text">"Ik gebruik Retatrutide nu 6 weken en het verschil is merkbaar. Minder honger, meer energie en mijn bloedsuiker is stabieler. Ik was sceptisch maar de resultaten liegen er niet om."</p>
-      <p class="peptides-reviews__name">— Peter K., 52 jaar</p>
-      <p class="peptides-reviews__badge">&#10003; Geverifieerde koper</p>
+      <div class="peptides-reviews__rating">
+        <span class="peptides-reviews__rating-score">5.0</span>
+        <span class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</span>
+      </div>
+      <p class="peptides-reviews__card-title">Merkbaar verschil na 6 weken</p>
+      <p class="peptides-reviews__text">Ik gebruik Retatrutide nu 6 weken en het verschil is merkbaar. Minder honger, meer energie en mijn bloedsuiker is stabieler. Ik was sceptisch maar de resultaten liegen er niet om.</p>
+      <div class="peptides-reviews__footer">
+        <p class="peptides-reviews__name">Peter K.</p>
+        <p class="peptides-reviews__badge">
+          <span class="peptides-reviews__badge-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Geverifieerde koper
+        </p>
+      </div>
     </div>
 
     <div class="peptides-reviews__card">
-      <div class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</div>
-      <p class="peptides-reviews__text">"Supersnel geleverd en discreet verpakt. De kwaliteit is uitstekend, het COA was bijgesloten. Ik bestel hier zeker opnieuw."</p>
-      <p class="peptides-reviews__name">— Anita R., 45 jaar</p>
-      <p class="peptides-reviews__badge">&#10003; Geverifieerde koper</p>
+      <div class="peptides-reviews__rating">
+        <span class="peptides-reviews__rating-score">5.0</span>
+        <span class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</span>
+      </div>
+      <p class="peptides-reviews__card-title">Supersnel geleverd, topkwaliteit</p>
+      <p class="peptides-reviews__text">Supersnel geleverd en discreet verpakt. De kwaliteit is uitstekend, het COA was bijgesloten. Ik bestel hier zeker opnieuw.</p>
+      <div class="peptides-reviews__footer">
+        <p class="peptides-reviews__name">Anita R.</p>
+        <p class="peptides-reviews__badge">
+          <span class="peptides-reviews__badge-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Geverifieerde koper
+        </p>
+      </div>
     </div>
 
     <div class="peptides-reviews__card">
-      <div class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</div>
-      <p class="peptides-reviews__text">"Na twee maanden merk ik dat mijn vetpercentage duidelijk daalt terwijl ik spiermassa behoud. Exact wat ik zocht. Aanrader voor serieuze sporters."</p>
-      <p class="peptides-reviews__name">— Thomas V., 39 jaar</p>
-      <p class="peptides-reviews__badge">&#10003; Geverifieerde koper</p>
+      <div class="peptides-reviews__rating">
+        <span class="peptides-reviews__rating-score">5.0</span>
+        <span class="peptides-reviews__stars" aria-label="5 sterren">★★★★★</span>
+      </div>
+      <p class="peptides-reviews__card-title">Vetpercentage daalt, spiermassa behouden</p>
+      <p class="peptides-reviews__text">Na twee maanden merk ik dat mijn vetpercentage duidelijk daalt terwijl ik spiermassa behoud. Exact wat ik zocht. Aanrader voor serieuze sporters.</p>
+      <div class="peptides-reviews__footer">
+        <p class="peptides-reviews__name">Thomas V.</p>
+        <p class="peptides-reviews__badge">
+          <span class="peptides-reviews__badge-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          Geverifieerde koper
+        </p>
+      </div>
     </div>
 
   </div>
