@@ -151,7 +151,7 @@
               </div>
               <div class="peptides-delivery__step-line" aria-hidden="true"></div>
               <p class="peptides-delivery__step-label">Besteld</p>
-              <p class="peptides-delivery__step-date">Morgen</p>
+              <p class="peptides-delivery__step-date">{{ 'now' | date: '%d %B' }}</p>
             </div>
 
             {%- comment -%} Step 2 – Verzonden {%- endcomment -%}
@@ -166,7 +166,7 @@
               </div>
               <div class="peptides-delivery__step-line" aria-hidden="true"></div>
               <p class="peptides-delivery__step-label">Verzonden</p>
-              <p class="peptides-delivery__step-date">11 juni</p>
+              <p class="peptides-delivery__step-date">{{ 'now' | date: '%s' | plus: 86400 | date: '%d %B' }}</p>
             </div>
 
             {%- comment -%} Step 3 – Geleverd {%- endcomment -%}
@@ -179,7 +179,7 @@
                 </svg>
               </div>
               <p class="peptides-delivery__step-label">Geleverd</p>
-              <p class="peptides-delivery__step-date">12 juni</p>
+              <p class="peptides-delivery__step-date">{{ 'now' | date: '%s' | plus: 172800 | date: '%d %B' }}</p>
             </div>
           </div>
 
