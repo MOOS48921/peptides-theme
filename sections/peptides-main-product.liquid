@@ -141,6 +141,16 @@
             <p class="peptides-delivery__subtext">Bestel nu, verzendt volgende werkdag</p>
           </div>
 
+          {%- assign nl_months = 'januari,februari,maart,april,mei,juni,juli,augustus,september,oktober,november,december' | split: ',' -%}
+          {%- assign today_month_num = 'now' | date: '%-m' | minus: 1 -%}
+          {%- assign tomorrow_ts = 'now' | date: '%s' | plus: 86400 -%}
+          {%- assign tomorrow_month_num = tomorrow_ts | date: '%-m' | minus: 1 -%}
+          {%- assign overmorrow_ts = 'now' | date: '%s' | plus: 172800 -%}
+          {%- assign overmorrow_month_num = overmorrow_ts | date: '%-m' | minus: 1 -%}
+          {%- assign today_date = 'now' | date: '%-d' | append: ' ' | append: nl_months[today_month_num] -%}
+          {%- assign tomorrow_date = tomorrow_ts | date: '%-d' | append: ' ' | append: nl_months[tomorrow_month_num] -%}
+          {%- assign overmorrow_date = overmorrow_ts | date: '%-d' | append: ' ' | append: nl_months[overmorrow_month_num] -%}
+
           <div class="peptides-delivery__timeline">
             {%- comment -%} Step 1 – Besteld (gold/active) {%- endcomment -%}
             <div class="peptides-delivery__step peptides-delivery__step--active">
@@ -151,7 +161,7 @@
               </div>
               <div class="peptides-delivery__step-line" aria-hidden="true"></div>
               <p class="peptides-delivery__step-label">Besteld</p>
-              <p class="peptides-delivery__step-date">{{ 'now' | date: '%d %B' }}</p>
+              <p class="peptides-delivery__step-date">{{ today_date }}</p>
             </div>
 
             {%- comment -%} Step 2 – Verzonden {%- endcomment -%}
@@ -166,7 +176,7 @@
               </div>
               <div class="peptides-delivery__step-line" aria-hidden="true"></div>
               <p class="peptides-delivery__step-label">Verzonden</p>
-              <p class="peptides-delivery__step-date">{{ 'now' | date: '%s' | plus: 86400 | date: '%d %B' }}</p>
+              <p class="peptides-delivery__step-date">{{ tomorrow_date }}</p>
             </div>
 
             {%- comment -%} Step 3 – Geleverd {%- endcomment -%}
@@ -179,7 +189,7 @@
                 </svg>
               </div>
               <p class="peptides-delivery__step-label">Geleverd</p>
-              <p class="peptides-delivery__step-date">{{ 'now' | date: '%s' | plus: 172800 | date: '%d %B' }}</p>
+              <p class="peptides-delivery__step-date">{{ overmorrow_date }}</p>
             </div>
           </div>
 
