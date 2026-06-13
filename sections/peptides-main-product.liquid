@@ -152,11 +152,13 @@
           {%- assign overmorrow_date = overmorrow_ts | date: '%-d' | append: ' ' | append: nl_months[overmorrow_month_num] -%}
 
           <div class="peptides-delivery__timeline">
-            {%- comment -%} Step 1 – Besteld (gold/active) {%- endcomment -%}
-            <div class="peptides-delivery__step peptides-delivery__step--active">
+            {%- comment -%} Step 1 – Besteld {%- endcomment -%}
+            <div class="peptides-delivery__step">
               <div class="peptides-delivery__step-icon">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <polyline points="3,9 7.5,13.5 15,4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M2 2h2.5l2 8h7l1.5-5H5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="7.5" cy="14.5" r="1.2" fill="currentColor"/>
+                  <circle cx="13" cy="14.5" r="1.2" fill="currentColor"/>
                 </svg>
               </div>
               <div class="peptides-delivery__step-line" aria-hidden="true"></div>
