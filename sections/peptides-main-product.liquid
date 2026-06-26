@@ -459,17 +459,37 @@
   <p class="peptides-timeline__disclaimer">* Individuele resultaten kunnen variëren.</p>
 
   <div class="peptides-guarantee-banner">
-    <h2 class="peptides-guarantee-banner__heading">30-Dagen Geld-Terug-Garantie</h2>
-    <p class="peptides-guarantee-banner__text">We zijn er zo zeker van dat u ons Retatrutide (GLP-3) geweldig zult vinden, dat we een 30-dagen geld-terug-garantie bieden op al onze producten.</p>
-    <a href="/collections/all" class="peptides-guarantee-banner__btn">PROBEER ZONDER RISICO</a>
+    <div class="peptides-guarantee-banner__shield">
+      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z"/>
+        <path d="M9 12l2 2 4-4"/>
+      </svg>
+    </div>
+    <h2 class="peptides-guarantee-banner__heading">Probeer 90 Dagen Risicovrij</h2>
+    <p class="peptides-guarantee-banner__text">Bij Peptidesmeester zijn we trots om onze klanten een tevredenheidsgarantie van 90 dagen te bieden op al onze producten. Onze garantie geeft je drie maanden de tijd om zelf het effect van onze peptiden te testen. Als je na drie maanden niet tevreden bent met het resultaat betalen we het volledige bedrag terug. Zonder gedoe, beloofd.</p>
+    <a href="/collections/all" class="peptides-guarantee-banner__btn">PROBEER RISICOVRIJ</a>
+    <div class="peptides-guarantee-banner__checks">
+      <div class="peptides-guarantee-banner__check">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        100% Tevreden
+      </div>
+      <div class="peptides-guarantee-banner__check">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Discreet Verpakt
+      </div>
+      <div class="peptides-guarantee-banner__check">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Gratis Retourneren
+      </div>
+    </div>
   </div>
 
 </section>
 
 <style>
 .peptides-guarantee-banner {
-  background: #f5f0eb;
-  border-radius: 12px;
+  background: #1a5c2e;
+  border-radius: 16px;
   text-align: center;
   padding: 4rem 3.2rem;
   margin-top: 4rem;
@@ -479,10 +499,16 @@
   gap: 1.6rem;
 }
 
+.peptides-guarantee-banner__shield {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .peptides-guarantee-banner__heading {
   font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 800;
-  color: #111111;
+  color: #ffffff;
   margin: 0;
   font-family: var(--font-heading-family, sans-serif);
   line-height: 1.2;
@@ -491,28 +517,44 @@
 .peptides-guarantee-banner__text {
   font-size: 1.5rem;
   line-height: 1.7;
-  color: #555555;
+  color: #ffffff;
   margin: 0;
-  max-width: 560px;
+  max-width: 580px;
 }
 
 .peptides-guarantee-banner__btn {
   display: inline-block;
-  background: #1a5c2e;
-  color: #ffffff;
+  background: #ffffff;
+  color: #1a5c2e;
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-decoration: none;
-  padding: 1.4rem 3.2rem;
+  padding: 1.4rem 3.6rem;
   border-radius: 50px;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   margin-top: 0.4rem;
 }
 
 .peptides-guarantee-banner__btn:hover {
-  background: #164f27;
+  opacity: 0.9;
   transform: translateY(-1px);
+}
+
+.peptides-guarantee-banner__checks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.peptides-guarantee-banner__check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
 }
 </style>
 
